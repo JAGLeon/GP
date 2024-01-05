@@ -16,12 +16,6 @@
                     <form class="form-horizontal" method="POST" action="personas/registrar" enctype="multipart/form-data">
                       <fieldset>
                         <legend>Registrate</legend>
-                        <?php
-                        
-                          require_once "Models/dataBase.php";
-                          require_once "Controllers/personas.php";
-
-                        ?>
                         <div class="form-group">
                             <input class="form-control" name="idProduct" type="hidden">
                             <label class="col-lg-2 control-label" for="name">Nombres</label>
