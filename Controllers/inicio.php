@@ -8,10 +8,7 @@ class Inicio
     }
 
     public function principal(){
-        require_once("Views/header.php");
         require_once("Views/Inicio/principal.php");
-        require_once("Views/footer.php");
-
     }    
 }
 
