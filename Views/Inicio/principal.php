@@ -1,3 +1,6 @@
+<?php 
+  require_once("Views/header.php");
+?>
 <div class="content-wrapper">
     <div class="page-title">
         <div>
@@ -26,3 +29,7 @@
     </div>
     </div>
 </div>
+
+<?php 
+    require_once("Views/footer.php");
+?>
