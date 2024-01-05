@@ -2,6 +2,7 @@
 require_once("Models/people.php");
 class Personas{
 
+    
     public $model;
     function __construct()
     {
