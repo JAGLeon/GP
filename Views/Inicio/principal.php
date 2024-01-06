@@ -18,14 +18,6 @@
             </h5>
         </div>
         </div>
-        <!--
-        <div class="col-md-6">
-        <div class="card">
-            <h3 class="card-title">Compatibility with frameworks</h3>
-           
-        </div>
-        </div>
-        -->
     </div>
     </div>
 </div>

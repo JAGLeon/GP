@@ -1,4 +1,12 @@
 <?php 
+    session_start();
+    if (!isset($_SESSION["name"])) {
+        echo '<script>alert("Por favor debes iniciar sesion");window.location = "../Personas/crear";</script>';
+        session_destroy();
+        die();
+    }
+?>
+<?php 
   require_once("Views/header.php");
 ?>
 <div class="content-wrapper">

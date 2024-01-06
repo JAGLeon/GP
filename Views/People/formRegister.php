@@ -1,88 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lion Store</title>
+  <!-- CSS-->
+  <link rel="stylesheet" type="text/css" href="Public/css/registerLogin.css">
+  <link href='https://fonts.googleapis.com/css?family=Jost:whgt@500&display=swap' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body >
 
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
 
-        <div class="page-title">
-          <div>
-            <h1><i class="fa fa-edit"></i> Registrate</h1>
-            <p>Ingrese sus datos</p>
-          </div>
-
+    <div class="signup">
+      <form method="POST" action="personas/registrar">
+        <label for="chk" aria-hidden="true">Registrar</label>
+        <input type="text" name="name" placeholder="Nombres" required>
+        <input type="text" name="lastName" placeholder="Apellidos" required>
+        <input type="number" name="cuit" placeholder="CUIT" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <div class="conteinerPsw">
+          <input type="password" name="password" placeholder="Contraseña" id="password" required>
+          <i class="fa-solid fa-eye-slash" id="eye"></i>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="well bs-component">
-                    <form class="form-horizontal" method="POST" action="personas/registrar" enctype="multipart/form-data">
-                      <fieldset>
-                        <legend>Registrate</legend>
-                        <div class="form-group">
-                            <input class="form-control" name="idProduct" type="hidden">
-                            <label class="col-lg-2 control-label" for="name">Nombres</label>
-                            <div class="col-lg-10">
-                                <input class="form-control" id="name" name="name" type="text" placeholder="Lukinhas" required>
-                            </div>    
-                        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div class="login">
+      <form method="POST" action="personas/ingresar">
+        <label for="chk" aria-hidden="true">Ingresar</label>
+        <div class="containerInpLogin">
+          <input type="email" name="email" placeholder="Email" reqired>
+          <div class="conteinerPsw">
+            <input type="password" name="password" placeholder="Contraseña" id="password2" required>
+            <i class="fa-solid fa-eye-slash" id="eye2"></i>
+          </div>
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label" for="lastName">Apellidos</label>
-                          <div class="col-lg-10">
-                            <input class="form-control" id="lastName" name="lastName" type="text" placeholder="Feliz cumple" required>
-                          </div>
-                        </div>
+  <script>
+    function qs(element) {
+      return document.querySelector(element);
+    };
 
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label" for="dni">DNI</label>
-                          <div class="col-lg-10">
-                            <input class="form-control" id="dni" name="dni" type="number" placeholder="13000456" required>
-                          </div>
-                        </div>
+    let $eye = qs('#eye'),
+    $eye2 = qs('#eye2'),
+    $pass = qs('#password'),
+    $pass2 = qs('#password2');
 
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label" for="cuit">CUIT</label>
-                          <div class="col-lg-10">
-                            <input class="form-control" id="cuit" name="cuit" type="number" placeholder="13000456" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label" for="birthdate">Fecha de nacimiento</label>
-                          <div class="col-lg-10">
-                            <input class="form-control" id="birthdate" name="birthdate" type="date" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label" for="email">Correo</label>
-                          <div class="col-lg-10">
-                            <input class="form-control" id="email" name="email" type="text" placeholder="prueba@gmail.com" required>
-                          </div>
-                        </div>
-                        
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label" for="password">Contraseña</label>
-                          <div class="col-lg-10">
-                            <input class="form-control" id="password" name="password" type="password" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label class="col-lg-2 control-label" for="imgUser">Imagen</label>
-                          <div class="col-lg-10">
-                             <input class="form-control" id="imgUser" name="imgUser" type="file"> 
-                          </div>
-                        </div>
-             
-                        <div class="form-group">
-                          <div class="col-lg-10 col-lg-offset-2">
-                            <button class="btn btn-default" type="reset">Cancel</button>
-                            <button class="btn btn-primary" type="submit">Enviar</button>
-                          </div>
-                        </div>
-                      </fieldset>
-                    </form>
-                  </div>
-                </div>
-
-<!-- </body>
-</html> -->
+    $eye.addEventListener("click",() => {
+      if($pass.type == "password"){
+          $pass.type = "text";
+          $eye.style.opacity = 0.2;
+      }else{
+          $pass.type = "password";
+          $eye.style.opacity = 1;
+      }
+    });
+    $eye2.addEventListener("click",() => {
+      if($pass2.type == "password"){
+          $pass2.type = "text";
+          $eye2.style.opacity = 0.2;
+      }else{
+          $pass2.type = "password";
+          $eye2.style.opacity = 1;
+      }
+    });
+  </script>
+</body>
+</html>

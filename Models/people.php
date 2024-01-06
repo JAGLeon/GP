@@ -17,21 +17,21 @@ class People{
         $this->pdo = DataBase::Conect();
     }
 
-    public function getId(){
+    public function getId() :?int{
         return $this->id;
     }
     public function setId($id){
         $this->id = $id;
     }
 
-    public function getName(){
+    public function getName() :?string{
         return $this->name;
     }
     public function setName($name){
         $this->name = $name;
     }
 
-    public function getLastName(){
+    public function getLastName() :?string{
         return $this->lastName;
     }
     public function setLastName($lastName){
@@ -52,18 +52,11 @@ class People{
         $this->cuit = $cuit;
     }
 
-    public function getEmail(){
+    public function getEmail() :?string{
         return $this->email;
     }
     public function setEmail($email){
         $this->email = $email;
-    }
-
-    public function getBirthdate(){
-        return $this->birthdate;
-    }
-    public function setBirthdate($birthdate){
-        $this->birthdate = $birthdate;
     }
 
     public function getPassword(){
@@ -82,15 +75,15 @@ class People{
 
     public function InsertPeople(People $people){
         try {
-            $query = "INSERT INTO crudstore.people(name,lastName,dni,cuit,email,password,birthdate) VALUES (?,?,?,?,?,?,?);";
+            $dni = substr(substr($people->getCuit(),2),0,-1) ;
+            $query = "INSERT INTO crudstore.people(name,lastName,dni,cuit,email,password) VALUES (?,?,?,?,?,?);";
             $this->pdo->prepare($query)->execute(array(
                 $people->getName(),
                 $people->getLastName(),
-                $people->getDni(),
+                $dni,
                 $people->getCuit(),
                 $people->getEmail(),
                 $people->getPassword(),
-                $people->getBirthdate(),
             ));
             return 1;
 
@@ -99,6 +92,37 @@ class People{
         }
     }
 
+    public function getPeopleEmail($email){
+        try {
+            $query = $this->pdo->prepare("SELECT * FROM crudstore.people WHERE email=?");
+            $query->execute(array($email));
+            $response = $query->fetch(PDO::FETCH_OBJ);
+            !$response ? true :false;
+        }catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function getUserLogin(People $people){
+        $query = $this->pdo->prepare("SELECT * FROM crudstore.people WHERE email=? AND password=?");
+        $query->execute(array(
+            $people->getEmail(),
+            $people->getPassword(),
+        ));
+        $response = $query->fetch(PDO::FETCH_OBJ);
+        if(!$response){
+            return false;
+        } else {	
+            $modelPeople = new People();
+            $modelPeople->setId($response->id);
+            $modelPeople->setName($response->name);
+            $modelPeople->setLastName($response->lastName);
+            $modelPeople->setEmail($response->email);
+            $modelPeople->setCuit($response->cuit);
+            $modelPeople->setDni($response->dni);
+            return $modelPeople;
+        }
+    }
 }
 
 ?>

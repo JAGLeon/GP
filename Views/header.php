@@ -7,11 +7,6 @@
     <!-- CSS-->
     <link rel="stylesheet" type="text/css" href="Public/css/main.css">
     <title>Lion Store</title>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
-    <!--if lt IE 9
-    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
-    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
-    -->
   </head>
   <body class="sidebar-mini fixed">
     <div class="wrapper">
@@ -38,9 +33,9 @@
               <!-- User Menu-->
               <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu">
-                  <li><a href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                  <li><a href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                  <li><a href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                  <li><a href="page-user.html"><i class="fa fa-cog fa-lg"></i> Configuración</a></li>
+                  <li><a href="page-user.html"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
+                  <li><a href="/personas/cerrarSesion"><i class="fa fa-sign-out fa-lg"></i> Salir</a></li>
                 </ul>
               </li>
             </ul>

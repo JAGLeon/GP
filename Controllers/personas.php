@@ -1,8 +1,6 @@
 <?php
 require_once("Models/people.php");
 class Personas{
-
-    
     public $model;
     function __construct()
     {
@@ -16,27 +14,53 @@ class Personas{
 
     function registrar()
     {
-        if(!empty($_POST["name"]) && !empty($_POST["lastName"]) && !empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["dni"]) && !empty($_POST["cuit"]) && !empty($_POST["birthdate"])){
+        if(!empty($_POST["name"]) && !empty($_POST["lastName"]) && !empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cuit"])){
+
+            $encriptPass = hash('sha512',$_POST["password"]);
             $modelPeople = new People();
             $modelPeople->setName($_POST["name"]);
             $modelPeople->setLastName($_POST["lastName"]);
             $modelPeople->setEmail($_POST["email"]);
-            $modelPeople->setPassword($_POST["password"]);
-            $modelPeople->setDni($_POST["dni"]);
+            $modelPeople->setPassword($encriptPass);
             $modelPeople->setCuit($_POST["cuit"]);
-            $modelPeople->setBirthdate($_POST["birthdate"]);
+            $response = $this->model->getPeopleEmail($_POST["email"]);
+            if(!$response){
+                echo '<script>alert("Este email esta registrado");window.location = "../Personas/crear";</script>';
+                exit();
+            }
 
             $response = $this->model->InsertPeople($modelPeople);
             if($response == 1){
-                echo '<div class="alert alert-success">Persona registrada correctamente</div>';
+                echo '<script>alert("Se registro");window.location = "../Personas/crear";</script>';
             } else {
-                echo '<div class="alert alert-danger">Ocurrio un error en el servidor</div>';
+                echo '<script>alert("Ocurrio un error en la base de datos");window.location = "../Personas/crear";</script>';
             }
         } else {
-            echo '<div class="alert alert-warning">Hay campos vacios</div>';
+            echo '<script>alert("Hay campos vacios");window.location = "../Personas/crear";</script>';
         }
     }
 
+    function ingresar(){
+        session_start();
+        $encriptPass = hash('sha512',$_POST["password"]);
+        $modelPeople = new People();
+        $modelPeople->setEmail($_POST["email"]);
+        $modelPeople->setPassword($encriptPass);
+
+        $response = $this->model->getUserLogin($modelPeople);
+        if(!$response){
+            echo '<script>alert("Email o contraseña incorrecto");window.location = "../Personas/crear";</script>';
+            exit();
+        }
+        $_SESSION['name'] = $_POST["email"];
+        header("location:/Productos/index");
+    }
+
+    function cerrarSesion(){
+        session_start();
+        session_destroy();
+        header("location:/Inicio/principal");
+    }
 }
 
 ?>

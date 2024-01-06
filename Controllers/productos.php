@@ -21,7 +21,7 @@ class Productos{
             $id = $url[3];
             $title = "Editar";
             $modelProduct = $this->model->getProduct($id);
-            //echo "<pre>"; echo var_dump($url); echo "</pre>" ;
+            echo "<pre>"; echo var_dump($modelProduct); echo "</pre>" ;
         }
         require_once("Views/Products/formCreate.php");
     }
@@ -35,9 +35,9 @@ class Productos{
         $modelProduct->setPrice($_POST['priceProduct']);
         $modelProduct->setQuantity($_POST['quantityProduct']);
 
-        // $img = $_FILES['imgProduct'];
-        // $location = $_FILES['imgProduct']['tmp_name'];
-        // echo var_dump($location);
+
+        // $pathInfo = pathinfo($_FILES["imgProduct"]["name"]);
+        // echo var_dump($pathInfo);
         // if(isset($img) && $img != ""){
         //     move_uploaded_file($location,'./Public/img'.$img);
         //     $modelProduct->setImg($img);
