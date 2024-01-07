@@ -85,8 +85,7 @@ class People{
                 $people->getEmail(),
                 $people->getPassword(),
             ));
-            return 1;
-
+            return true;
         } catch (Exception $e) {
             die($e->getMessage());
         }
@@ -97,23 +96,33 @@ class People{
             $query = $this->pdo->prepare("SELECT * FROM crudstore.people WHERE email=?");
             $query->execute(array($email));
             $response = $query->fetch(PDO::FETCH_OBJ);
-            !$response ? true :false;
+            if(!$response){
+                return false;
+            } else {	
+                return true;
+            }
         }catch (Exception $e) {
             die($e->getMessage());
         }
     }
 
+
     public function getUserLogin(People $people){
-        $query = $this->pdo->prepare("SELECT * FROM crudstore.people WHERE email=? AND password=?");
-        $query->execute(array(
-            $people->getEmail(),
-            $people->getPassword(),
-        ));
-        $response = $query->fetch(PDO::FETCH_OBJ);
-        if(!$response){
-            return false;
-        } else {	
-            return $this->setUserProperties($response);
+        try {
+            $query = $this->pdo->prepare("SELECT * FROM crudstore.people WHERE email=?");
+            $query->execute(array($people->getEmail()));
+            $response = $query->fetch(PDO::FETCH_OBJ);
+            if(!$response){
+                return false;
+            } else {	
+                $modelUser = $this->setUserProperties($response);
+                if(password_verify($people->getPassword(), $modelUser->getPassword())){
+                    return $modelUser;
+                }
+                return false;
+            }
+        }catch (Exception $e) {
+            die($e->getMessage());
         }
     }
 
@@ -136,6 +145,7 @@ class People{
         $modelPeople->setEmail($response->email);
         $modelPeople->setCuit($response->cuit);
         $modelPeople->setDni($response->dni);
+        $modelPeople->setPassword($response->password);
         return $modelPeople;
     }
 }

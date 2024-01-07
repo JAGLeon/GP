@@ -16,7 +16,7 @@ class Personas{
     {
         if(!empty($_POST["name"]) && !empty($_POST["lastName"]) && !empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cuit"])){
 
-            $encriptPass = hash('sha512',$_POST["password"]);
+            $encriptPass = password_hash($_POST["password"],PASSWORD_DEFAULT,["cost" => 10]);
             $modelPeople = new People();
             $modelPeople->setName($_POST["name"]);
             $modelPeople->setLastName($_POST["lastName"]);
@@ -24,13 +24,12 @@ class Personas{
             $modelPeople->setPassword($encriptPass);
             $modelPeople->setCuit($_POST["cuit"]);
             $response = $this->model->getPeopleEmail($_POST["email"]);
-            if(!$response){
+            if($response){
                 echo '<script>alert("Este email esta registrado");window.location = "../Personas/crear";</script>';
                 exit();
             }
-
             $response = $this->model->InsertPeople($modelPeople);
-            if($response == 1){
+            if($response){
                 echo '<script>alert("Se registro");window.location = "../Personas/crear";</script>';
             } else {
                 echo '<script>alert("Ocurrio un error en la base de datos");window.location = "../Personas/crear";</script>';
@@ -42,10 +41,9 @@ class Personas{
 
     function ingresar(){
         session_start();
-        $encriptPass = hash('sha512',$_POST["password"]);
         $modelPeople = new People();
         $modelPeople->setEmail($_POST["email"]);
-        $modelPeople->setPassword($encriptPass);
+        $modelPeople->setPassword($_POST["password"]);
 
         $response = $this->model->getUserLogin($modelPeople);
         if(!$response){
