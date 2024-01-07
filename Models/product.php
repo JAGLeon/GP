@@ -79,7 +79,7 @@ class Product{
         }
     }
 
-    public function InsertProducts(Product $p){
+    public function insertProducts(Product $p){
         try{
             $query = "INSERT INTO crudstore.products(name,brand,cost,price,quantity) VALUES (?,?,?,?,?);";
             $this->pdo->prepare($query)->execute(array(
@@ -112,7 +112,7 @@ class Product{
         }
     }
 
-    public function UpdateProducts(Product $p){
+    public function updateProducts(Product $p){
         try{
             $query = "UPDATE crudstore.products SET name=?, brand=?, cost=?, price=?,quantity=? WHERE id=?;";
             $this->pdo->prepare($query)->execute(array(
@@ -128,7 +128,7 @@ class Product{
         }
     }
 
-    public function DeleteProducts($id){
+    public function deleteProducts($id){
         try {
             $query = "DELETE FROM crudstore.products WHERE id=?";
             $this->pdo->prepare($query)->execute(array($id));

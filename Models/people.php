@@ -113,15 +113,30 @@ class People{
         if(!$response){
             return false;
         } else {	
-            $modelPeople = new People();
-            $modelPeople->setId($response->id);
-            $modelPeople->setName($response->name);
-            $modelPeople->setLastName($response->lastName);
-            $modelPeople->setEmail($response->email);
-            $modelPeople->setCuit($response->cuit);
-            $modelPeople->setDni($response->dni);
-            return $modelPeople;
+            return $this->setUserProperties($response);
         }
+    }
+
+    function getUserId($id){
+        try {
+            $query = $this->pdo->prepare("SELECT * FROM crudstore.people WHERE id=?");
+            $query->execute(array($id));
+            $response = $query->fetch(PDO::FETCH_OBJ);
+            return $this->setUserProperties($response);
+        }catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    function setUserProperties($response){
+        $modelPeople = new People();
+        $modelPeople->setId($response->id);
+        $modelPeople->setName($response->name);
+        $modelPeople->setLastName($response->lastName);
+        $modelPeople->setEmail($response->email);
+        $modelPeople->setCuit($response->cuit);
+        $modelPeople->setDni($response->dni);
+        return $modelPeople;
     }
 }
 

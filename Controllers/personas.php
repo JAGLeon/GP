@@ -52,14 +52,33 @@ class Personas{
             echo '<script>alert("Email o contraseña incorrecto");window.location = "../Personas/crear";</script>';
             exit();
         }
-        $_SESSION['name'] = $_POST["email"];
+        $_SESSION['id'] = $response->getId();
+        $_SESSION['name'] = $response->getName();
         header("location:/Productos/index");
     }
 
     function cerrarSesion(){
         session_start();
         session_destroy();
-        header("location:/Inicio/principal");
+        header("location:/Personas/crear");
+    }
+
+    function verificarSesion(){
+        session_start();
+        if (!isset($_SESSION["id"])) {
+            echo '<script>alert("Por favor debes iniciar sesion");window.location = "../Personas/crear";</script>';
+            session_destroy();
+            die();
+        }
+    }
+
+    function perfil(){
+        $tags = isset($_GET) ? array_keys($_GET) : null;
+        $url = explode('/',$tags[0]);
+        $id = $url[3];
+        $modelPeople = new People();
+        $modelPeople = $this->model->getUserId($id);
+        require_once("Views/People/profile.php");
     }
 }
 

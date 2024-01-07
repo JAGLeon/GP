@@ -21,7 +21,7 @@ class Productos{
             $id = $url[3];
             $title = "Editar";
             $modelProduct = $this->model->getProduct($id);
-            echo "<pre>"; echo var_dump($modelProduct); echo "</pre>" ;
+            //echo "<pre>"; echo var_dump($modelProduct); echo "</pre>" ;
         }
         require_once("Views/Products/formCreate.php");
     }
@@ -43,7 +43,7 @@ class Productos{
         //     $modelProduct->setImg($img);
         // }
 
-        $modelProduct->getId() > 0 ? $this->model->UpdateProducts($modelProduct) : $this->model->InsertProducts($modelProduct);
+        $modelProduct->getId() > 0 ? $this->model->updateProducts($modelProduct) : $this->model->insertProducts($modelProduct);
         
         header("location:/Productos/index");
     }
@@ -52,7 +52,7 @@ class Productos{
         $tags = isset($_GET) ? array_keys($_GET) : null;
         $url = explode('/',$tags[0]);
         $id = $url[3];
-        $this->model->DeleteProducts($id);
+        $this->model->deleteProducts($id);
         header("location:/Productos/index");
     }
 
