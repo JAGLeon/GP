@@ -10,7 +10,8 @@ class People{
     private $email;
     private $password;
     private $img;
-    private $role;
+    private $role_id;
+    private $roleTxt;
 
     public function __construct()
     {
@@ -73,18 +74,18 @@ class People{
         $this->img = $img;
     }
 
-    public function getRole() :?int{
-        return $this->role;
+    public function getRole_id() :?int{
+        return $this->role_id;
     }
-    public function setRole($role){
-        $this->role = $role;
+    public function setRole_id(?int $role_id){
+        $this->role_id = $role_id;
     }
 
     public function getRoleTxt() :?string{
-        return $this->role;
+        return $this->roleTxt;
     }
-    public function setRoleTxt($role){
-        $this->role = $role;
+    public function setRoleTxt($roleTxt){
+        $this->roleTxt = $roleTxt;
     }
 
     public function InsertPeople(People $people){
@@ -161,13 +162,13 @@ class People{
         $modelPeople->setCuit($response->cuit);
         $modelPeople->setDni($response->dni);
         $modelPeople->setPassword($response->password);
-        $modelPeople->setRole($response->role_id);
+        $modelPeople->setRole_id($response->role_id);
 
         $query = $this->pdo->prepare("SELECT tipo FROM crudstore.roles WHERE id=?");
         $query->execute(array($response->role_id));
         $response = $query->fetch(PDO::FETCH_OBJ);
         $modelPeople->setRoleTxt($response->tipo);
-        
+
         return $modelPeople;
     }
 }

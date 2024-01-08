@@ -1,5 +1,7 @@
 <?php
 require_once("Models/people.php");
+session_start();
+
 class Personas{
     public $model;
     function __construct()
@@ -9,13 +11,19 @@ class Personas{
 
     function crear()
     {
+        $this->restriccionUsuario();
         require_once("Views/People/formRegister.php");
     }
 
+    function restriccionUsuario(){
+        if(isset($_SESSION['id'])){
+            $this->rolePersona();
+            exit();
+        }
+    }
     function registrar()
     {
         if(!empty($_POST["name"]) && !empty($_POST["lastName"]) && !empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cuit"])){
-
             $encriptPass = password_hash($_POST["password"],PASSWORD_DEFAULT,["cost" => 10]);
             $modelPeople = new People();
             $modelPeople->setName($_POST["name"]);
@@ -38,9 +46,7 @@ class Personas{
             echo '<script>alert("Hay campos vacios");window.location = "../Personas/crear";</script>';
         }
     }
-
     function ingresar(){
-        session_start();
         $modelPeople = new People();
         $modelPeople->setEmail($_POST["email"]);
         $modelPeople->setPassword($_POST["password"]);
@@ -50,27 +56,42 @@ class Personas{
             echo '<script>alert("Email o contraseña incorrecto");window.location = "../Personas/crear";</script>';
             exit();
         }
-        $_SESSION['id'] = $response->getId();
-        $_SESSION['name'] = $response->getName();
-        $_SESSION['role'] = $response->getRoleTxt();
-        header("location:/Productos/index");
+        $this->redireccionPersona($response);
     }
-
+    function redireccionPersona(People $people){
+        $this->asignarSesion($people);
+        $this->rolePersona();
+    }
+    function asignarSesion(People $people){
+        $_SESSION['id'] = $people->getId();
+        $_SESSION['name'] = $people->getName();
+        $_SESSION['role'] = $people->getRole_id();
+        $_SESSION['roleTxt'] = $people->getRoleTxt();
+    }
+    function rolePersona(){
+        if (isset($_SESSION["role"])) {
+            switch ($_SESSION["role"]) {
+                case 1:
+                    header("location:/Productos/crear");
+                    break;
+                case 2:
+                    header("location:/Inicio/principal");
+                    break;
+                default;
+            }
+        }
+    }
     function cerrarSesion(){
-        session_start();
         session_destroy();
         header("location:/Personas/crear");
     }
-
     function verificarSesion(){
-        session_start();
         if (!isset($_SESSION["id"])) {
             echo '<script>alert("Por favor debes iniciar sesion");window.location = "../Personas/crear";</script>';
             session_destroy();
             die();
         }
     }
-
     function perfil(){
         $tags = isset($_GET) ? array_keys($_GET) : null;
         $url = explode('/',$tags[0]);

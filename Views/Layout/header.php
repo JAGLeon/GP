@@ -54,18 +54,29 @@
             <div class="pull-left image"><img class="img-circle" src="../Public/img/imgProyecto.png" alt="User Image"></div>
             <div class="pull-left info">
               <p><?=$_SESSION['name']?></p>
-              <p class="designation"><?=$_SESSION['role']?></p>
+              <p class="designation"><?=$_SESSION['roleTxt']?></p>
             </div>
           </div>
           <!-- Sidebar Menu-->
           <ul class="sidebar-menu">
             <li class="active"><a href="/Inicio/principal"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>Productos</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="/Productos/index"><i class="fa fa-circle-o"></i> Productos</a></li>
-                <li><a href="/Productos/crear"><i class="fa fa-circle-o"></i> Agregar</a></li>
-              </ul>
-            </li>
+            <?php 
+              if($_SESSION['role'] == 1){
+                echo '
+                <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>Productos</span><i class="fa fa-angle-right"></i></a>
+                  <ul class="treeview-menu">
+                    <li><a href="/Productos/index"><i class="fa fa-circle-o"></i> Productos</a></li>
+                    <li><a href="/Productos/crear"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                  </ul>
+                </li>
+                ';
+              } else{
+                echo '
+                <li class="treeview"><a href="/Inicio/principal"><i class="fa fa-laptop"></i><span>Productos</span></a></li>
+                ';
+              }
+            ?>
+
           </ul>
         </section>
       </aside>

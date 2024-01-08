@@ -1,5 +1,5 @@
 <?php 
-  require_once("Views/header.php");
+  require_once("Views/Layout/header.php");
 ?>
 <div class="content-wrapper">
     <div class="page-title">
@@ -23,5 +23,5 @@
 </div>
 
 <?php 
-    require_once("Views/footer.php");
+    require_once("Views/Layout/footer.php");
 ?>

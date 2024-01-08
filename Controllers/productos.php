@@ -1,18 +1,28 @@
 <?php 
 require_once("Models/product.php");
+require_once("Controllers/personas.php");
 class Productos{
 
     private $model;
+    private $modelPersonas;
+
 
     public function __construct(){
         $this->model = new Product();
-    }
+        $this->modelPersonas = new Personas();
 
+    }
+    function restriccionUsuario(){
+        if(isset($_SESSION['id']) && $_SESSION["role"] != 1){
+            header("location:/Inicio/principal");
+            exit();
+        }
+    }
     public function index(){
         require_once("Views/Products/index.php");
     }
-
     public function crear(){
+        $this->restriccionUsuario();
         $title = "Registrar";
         $tags = isset($_GET) ? array_keys($_GET) : null;
         $url = explode('/',$tags[0]);
@@ -25,8 +35,8 @@ class Productos{
         }
         require_once("Views/Products/formCreate.php");
     }
-
     public function guardar(){
+        $this->restriccionUsuario();
         $modelProduct = new Product();
         $modelProduct->setId(intval($_POST["idProduct"]));
         $modelProduct->setName($_POST['nameProduct']);
@@ -47,8 +57,8 @@ class Productos{
         
         header("location:/Productos/index");
     }
-
     public function borrar(){
+        $this->restriccionUsuario();
         $tags = isset($_GET) ? array_keys($_GET) : null;
         $url = explode('/',$tags[0]);
         $id = $url[3];
