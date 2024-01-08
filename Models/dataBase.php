@@ -15,9 +15,7 @@ class DataBase{
         }catch(PDOException $e){
             return "Fallo ".$e->getMessage();
         }
-
     }
-
 }
 
 ?>

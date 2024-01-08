@@ -8,9 +8,9 @@ class People{
     private $dni;
     private $cuit;
     private $email;
-    private $birthdate;
     private $password;
     private $img;
+    private $role;
 
     public function __construct()
     {
@@ -73,10 +73,24 @@ class People{
         $this->img = $img;
     }
 
+    public function getRole() :?int{
+        return $this->role;
+    }
+    public function setRole($role){
+        $this->role = $role;
+    }
+
+    public function getRoleTxt() :?string{
+        return $this->role;
+    }
+    public function setRoleTxt($role){
+        $this->role = $role;
+    }
+
     public function InsertPeople(People $people){
         try {
             $dni = substr(substr($people->getCuit(),2),0,-1) ;
-            $query = "INSERT INTO crudstore.people(name,lastName,dni,cuit,email,password) VALUES (?,?,?,?,?,?);";
+            $query = "INSERT INTO crudstore.people(name,lastName,dni,cuit,email,password,role_id) VALUES (?,?,?,?,?,?,?);";
             $this->pdo->prepare($query)->execute(array(
                 $people->getName(),
                 $people->getLastName(),
@@ -84,6 +98,7 @@ class People{
                 $people->getCuit(),
                 $people->getEmail(),
                 $people->getPassword(),
+                2
             ));
             return true;
         } catch (Exception $e) {
@@ -146,6 +161,13 @@ class People{
         $modelPeople->setCuit($response->cuit);
         $modelPeople->setDni($response->dni);
         $modelPeople->setPassword($response->password);
+        $modelPeople->setRole($response->role_id);
+
+        $query = $this->pdo->prepare("SELECT tipo FROM crudstore.roles WHERE id=?");
+        $query->execute(array($response->role_id));
+        $response = $query->fetch(PDO::FETCH_OBJ);
+        $modelPeople->setRoleTxt($response->tipo);
+        
         return $modelPeople;
     }
 }

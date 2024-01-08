@@ -36,7 +36,7 @@
                         <div class="form-group">
                           <label class="col-lg-2 control-label" for="dni">DNI</label>
                           <div class="col-lg-10">
-                            <input class="form-control" id="dni" name="dni" type="number" placeholder="13000456" value="<?=$modelPeople->getDni()?>" required>
+                            <input class="form-control" id="dni" name="dni" type="number" placeholder="13000456" value="<?=$modelPeople->getDni()?>" disabled>
                           </div>
                         </div>
 
@@ -50,16 +50,22 @@
                         <div class="form-group">
                           <label class="col-lg-2 control-label" for="email">Correo</label>
                           <div class="col-lg-10">
-                            <input class="form-control" id="email" name="email" type="text" placeholder="prueba@gmail.com" value="<?=$modelPeople->getEmail()?>" required>
+                            <input class="form-control" id="email" name="email" type="text" placeholder="prueba@gmail.com" value="<?=$modelPeople->getEmail()?>" disabled>
                           </div>
                         </div>
                         
                         <div class="form-group">
+                          <label class="col-lg-2 control-label" for="role">Rol</label>
+                          <div class="col-lg-10">
+                            <input class="form-control" id="role" name="role" type="role" value="<?=$modelPeople->getRoleTxt()?>" disabled >
+                          </div>
+                        </div>
+                      <!--  <div class="form-group">
                           <label class="col-lg-2 control-label" for="password">Contraseña</label>
                           <div class="col-lg-10">
                             <input class="form-control" id="password" name="password" type="password" value="<?=$modelPeople->getPassword()?>" required>
                           </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                           <label class="col-lg-2 control-label" for="imgUser">Imagen</label>

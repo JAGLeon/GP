@@ -52,6 +52,7 @@ class Personas{
         }
         $_SESSION['id'] = $response->getId();
         $_SESSION['name'] = $response->getName();
+        $_SESSION['role'] = $response->getRoleTxt();
         header("location:/Productos/index");
     }
 

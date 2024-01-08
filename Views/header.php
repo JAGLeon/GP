@@ -54,7 +54,7 @@
             <div class="pull-left image"><img class="img-circle" src="../Public/img/imgProyecto.png" alt="User Image"></div>
             <div class="pull-left info">
               <p><?=$_SESSION['name']?></p>
-              <p class="designation">ROL</p>
+              <p class="designation"><?=$_SESSION['role']?></p>
             </div>
           </div>
           <!-- Sidebar Menu-->
