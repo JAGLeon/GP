@@ -16,14 +16,15 @@
     <input type="checkbox" id="chk" aria-hidden="true">
 
     <div class="signup">
-      <form method="POST" action="personas/registrar">
+      <form method="POST" action="personas/registrar" id="formRegister">
+        <p id="errors1"></p>
         <label for="chk" aria-hidden="true">Registrar</label>
-        <input type="text" name="name" placeholder="Nombres" required>
-        <input type="text" name="lastName" placeholder="Apellidos" required>
-        <input type="number" name="cuit" placeholder="CUIT" required>
-        <input type="email" name="email" placeholder="Email" id="email" required>
+        <input type="text" name="name" id="name" placeholder="Nombres">
+        <input type="text" name="lastName" id="lastName" placeholder="Apellidos">
+        <input type="number" name="cuit" id="cuit" placeholder="CUIT">
+        <input type="email" name="email" id="email" placeholder="Email" id="email">
         <div class="conteinerPsw">
-          <input type="password" name="password" placeholder="Contraseña" id="password" required>
+          <input type="password" name="password" id="password" placeholder="Contraseña" id="password">
           <i class="fa-solid fa-eye-slash" id="eye"></i>
         </div>
         <button type="submit">Enviar</button>
@@ -45,7 +46,6 @@
     </div>
   </div>
   <script src="Public/js/login.js"></script>
-
-
+  <script src="Public/js/register.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@ function qs(element) {
     return document.querySelector(element)
 }
     let $inputEmail = qs('#email2'),
-    $inputpassword = qs('#password2'),
+    $inputPassword = qs('#password2'),
     $errors = qs('#errors2'),
     $eye = qs('#eye2'),
     $pass = qs('#password2'),
@@ -26,15 +26,15 @@ function qs(element) {
         }
     });
 
-    $inputpassword.addEventListener("blur", (e) => {
+    $inputPassword.addEventListener("blur", (e) => {
         switch (true) {
-            case !$inputpassword.value.trim():
+            case !$inputPassword.value.trim():
                 $errors.innerHTML = "Se debe ingresar una contraseña";
-                $inputpassword.classList.add("is-invalid");
+                $inputPassword.classList.add("is-invalid");
                 $eye.style.right = "-240px"; 
                 break;
             default: 
-                $inputpassword.classList.remove("is-invalid");
+                $inputPassword.classList.remove("is-invalid");
                 $errors.innerHTML = "";
                 $eye.style.right = "-260px";
                 break;
