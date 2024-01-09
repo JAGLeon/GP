@@ -21,7 +21,7 @@
         <input type="text" name="name" placeholder="Nombres" required>
         <input type="text" name="lastName" placeholder="Apellidos" required>
         <input type="number" name="cuit" placeholder="CUIT" required>
-        <input type="email" name="email" placeholder="Email" required>
+        <input type="email" name="email" placeholder="Email" id="email" required>
         <div class="conteinerPsw">
           <input type="password" name="password" placeholder="Contraseña" id="password" required>
           <i class="fa-solid fa-eye-slash" id="eye"></i>
@@ -30,12 +30,13 @@
       </form>
     </div>
     <div class="login">
-      <form method="POST" action="personas/ingresar">
+      <form method="POST" action="personas/ingresar" id="formLogin">
+        <p id="errors2"></p>
         <label for="chk" aria-hidden="true">Ingresar</label>
         <div class="containerInpLogin">
-          <input type="email" name="email" placeholder="Email" reqired>
+          <input type="email" name="email" placeholder="Email" id="email2">
           <div class="conteinerPsw">
-            <input type="password" name="password" placeholder="Contraseña" id="password2" required>
+            <input type="password" name="password" placeholder="Contraseña" id="password2">
             <i class="fa-solid fa-eye-slash" id="eye2"></i>
           </div>
           <button type="submit">Enviar</button>
@@ -43,35 +44,8 @@
       </form>
     </div>
   </div>
+  <script src="Public/js/login.js"></script>
 
-  <script>
-    function qs(element) {
-      return document.querySelector(element);
-    };
 
-    let $eye = qs('#eye'),
-    $eye2 = qs('#eye2'),
-    $pass = qs('#password'),
-    $pass2 = qs('#password2');
-
-    $eye.addEventListener("click",() => {
-      if($pass.type == "password"){
-          $pass.type = "text";
-          $eye.style.opacity = 0.2;
-      }else{
-          $pass.type = "password";
-          $eye.style.opacity = 1;
-      }
-    });
-    $eye2.addEventListener("click",() => {
-      if($pass2.type == "password"){
-          $pass2.type = "text";
-          $eye2.style.opacity = 0.2;
-      }else{
-          $pass2.type = "password";
-          $eye2.style.opacity = 1;
-      }
-    });
-  </script>
 </body>
 </html>

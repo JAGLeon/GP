@@ -24,7 +24,7 @@ class Productos{
     public function crear(){
         $this->restriccionUsuario();
         $title = "Registrar";
-        $tags = isset($_GET) ? array_keys($_GET) : null;
+        $tags = isset($_GET) ? array_keys($_GET) : null;// ?/dasd/metodo/1
         $url = explode('/',$tags[0]);
         $modelProduct = new Product();
         if(count($url) > 3){

@@ -39,7 +39,7 @@
                       <td><?= $product->price?></td>
                       <td><?= $product->img?></td>
                       <td> 
-                        <a class="btn btn-info btn-flat" href="/productos/crear/<?=$product->id?>"><i class="fa fa-lg fa-pencil"></i>
+                        <a class="btn btn-info btn-flat" href="/productos/crear/<?= $product->id?>"><i class="fa fa-lg fa-pencil"></i>
                         </a>
                         <a class="btn btn-danger btn-flat" href="/productos/borrar/<?=$product->id?>"><i class="fa fa-lg fa-trash"></i>
                         </a>
