@@ -37,7 +37,11 @@
                       <td><?= $product->quantity?></td>
                       <td><?= $product->cost?></td>
                       <td><?= $product->price?></td>
-                      <td><?= $product->img?></td>
+                      <td>
+                        <div style="height: 50px;width: 50px;">
+                          <img src="<?= $product->img?>" style="width: 100%;height: 100%;object-fit: cover;">
+                        </div>
+                      </td>
                       <td> 
                         <a class="btn btn-info btn-flat" href="/productos/crear/<?= $product->id?>"><i class="fa fa-lg fa-pencil"></i>
                         </a>

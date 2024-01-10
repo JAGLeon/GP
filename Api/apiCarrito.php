@@ -26,21 +26,22 @@ class ApiCarrito{
         }   
     }
     function mostrar($cart){// carga el carrito en la session, ademas se dija de tener stock
-        $itemsCart = json_decode($cart->load(),1);
         $fullItems = [];
         $total = 0;
         $totalItems = 0;
+        if($cart->load() != null){
+            $itemsCart = json_decode($cart->load(),1);
+            foreach ($itemsCart as $item){
+                $httpRequest = file_get_contents('http://localhost/?/apiProductos/productos&item='.$item['id']);
+                $itemProduct = json_decode($httpRequest,1)['response'];
+                $itemProduct['cantidad'] = $item['cantidad'];
+                $itemProduct['subTotal'] = $item['cantidad'] * $itemProduct['price'];
 
-        foreach ($itemsCart as $item){
-            $httpRequest = file_get_contents('http://localhost/?/apiProductos/productos&item='.$item['id']);
-            $itemProduct = json_decode($httpRequest,1)['response'];
-            $itemProduct['cantidad'] = $item['cantidad'];
-            $itemProduct['subTotal'] = $item['cantidad'] * $itemProduct['precio'];
+                $total += $itemProduct['subTotal'];
+                $totalItems += $itemProduct['cantidad'];
 
-            $total += $itemProduct['subTotal'];
-            $totalItems += $itemProduct['cantidad'];
-
-            array_push($fullItems,$itemProduct);
+                array_push($fullItems,$itemProduct);
+            }
         }
         $responseArray = array('info' => ['count' => $totalItems, 'total' => $total] , 'items' => $fullItems);
 

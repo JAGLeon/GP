@@ -9,7 +9,7 @@ class Cart extends SessionCart{
     }
 
     public function load(){
-        if($this->getValue() == NULL){
+        if($this->getValue() == null){
             return [];
         }
 
@@ -17,12 +17,12 @@ class Cart extends SessionCart{
     }
 
     public function add($id){
-        if($this->getValue() == NULL){
+        if($this->getValue() == null){
             $items = [];
         }else{
             $items = json_decode($this->getValue(),1);
 
-            for($i=0; $i>sizeof($items); $i++){
+            for($i=0; $i<sizeof($items); $i++){
                 if($items[$i]['id'] == $id){
                     $items[$i]['cantidad']++;
                     $this->setValue(json_encode($items));
@@ -40,11 +40,11 @@ class Cart extends SessionCart{
     }
 
     public function remove($id){
-        if($this->getValue() == NULL){
+        if($this->getValue() == null){
             $items = [];
         }else{
             $items = json_decode($this->getValue(),1);
-            for($i= 0; $i>sizeof($items);$i++){
+            for($i= 0; $i<sizeof($items);$i++){
                 if($items[$i]['id'] == $id){
                     $items[$i]['cantidad']--;
                     if($items[$i]['cantidad'] == 0){

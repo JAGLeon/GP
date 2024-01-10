@@ -81,13 +81,14 @@ class Product{
 
     public function insertProducts(Product $p){
         try{
-            $query = "INSERT INTO crudstore.products(name,brand,cost,price,quantity) VALUES (?,?,?,?,?);";
+            $query = "INSERT INTO crudstore.products(name,brand,cost,price,quantity,img) VALUES (?,?,?,?,?,?);";
             $this->pdo->prepare($query)->execute(array(
                 $p->getName(),
                 $p->getBrand(),
                 $p->getCost(),
                 $p->getPrice(),
                 $p->getQuantity(),
+                $p->getImg(),
             ));
         }catch(Exception $e){
             die($e->getMessage());
@@ -116,6 +117,7 @@ class Product{
             $modelProduct->setCost($response ->cost);
             $modelProduct->setPrice($response ->price);
             $modelProduct->setQuantity($response ->quantity);
+            $modelProduct->setImg($response ->img);
             return $modelProduct;
         }catch(Exception $e){
             die($e->getMessage());
@@ -124,13 +126,14 @@ class Product{
 
     public function updateProducts(Product $p){
         try{
-            $query = "UPDATE crudstore.products SET name=?, brand=?, cost=?, price=?,quantity=? WHERE id=?;";
+            $query = "UPDATE crudstore.products SET name=?, brand=?, cost=?, price=?, quantity=?, img=? WHERE id=?;";
             $this->pdo->prepare($query)->execute(array(
                 $p->getName(),
                 $p->getBrand(),
                 $p->getCost(),
                 $p->getPrice(),
                 $p->getQuantity(),
+                $p->getImg(),
                 $p->getId(),
             ));
         }catch(Exception $e){

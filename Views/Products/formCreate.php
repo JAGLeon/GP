@@ -58,7 +58,7 @@
                         <div class="form-group">
                           <label class="col-lg-2 control-label" for="imgProduct">Imagen</label>
                           <div class="col-lg-10">
-                             <input class="form-control" id="imgProduct" name="imgProduct" type="file"> 
+                             <input class="form-control" id="imgProduct" name="imgProduct" type="text" value="<?=$modelProduct->getImg()?>"> 
                           </div>
                         </div>
              

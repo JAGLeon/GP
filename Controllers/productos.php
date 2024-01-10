@@ -44,6 +44,7 @@ class Productos{
         $modelProduct->setCost($_POST['costProduct']);
         $modelProduct->setPrice($_POST['priceProduct']);
         $modelProduct->setQuantity($_POST['quantityProduct']);
+        $modelProduct->setImg($_POST['imgProduct']);
 
 
         // $pathInfo = pathinfo($_FILES["imgProduct"]["name"]);
@@ -52,7 +53,6 @@ class Productos{
         //     move_uploaded_file($location,'./Public/img'.$img);
         //     $modelProduct->setImg($img);
         // }
-
         $modelProduct->getId() > 0 ? $this->model->updateProducts($modelProduct) : $this->model->insertProducts($modelProduct);
         
         header("location:/Productos/index");
