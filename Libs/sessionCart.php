@@ -1,5 +1,5 @@
 <?php
-Class SessionCar{
+Class SessionCart{
 
     private $session = NULL;
 

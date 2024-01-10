@@ -9,8 +9,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <!-- CSS-->
     <link rel="stylesheet" type="text/css" href="Public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="Public/css/productCard.css">
     <title>Lion Store</title>
   </head>
   <body class="sidebar-mini fixed">
@@ -23,7 +25,7 @@
           <div class="navbar-custom-menu">
             <ul class="top-nav">
               <!--Notification Menu-->
-              <li class="dropdown notification-menu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell-o fa-lg"></i></a>
+              <li class="dropdown notification-menu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-cart-plus" style="font-size:18px"></i></a>
                 <ul class="dropdown-menu">
                   <li class="not-head">You have 4 new notifications.</li>
                   <li><a class="media" href="javascript:;"><span class="media-left media-icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>

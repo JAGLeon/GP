@@ -93,6 +93,16 @@ class Product{
             die($e->getMessage());
         }
     }
+    public function getProductApi($id){
+        try{
+            $query = $this->pdo->prepare("SELECT * FROM crudstore.products WHERE id =?;");
+            $query->execute(array($id));
+            $response = $query->fetch(PDO::FETCH_OBJ);
+            return $response;
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
 
     public function getProduct($id){
         try{
