@@ -1,12 +1,16 @@
 <?php
 require_once("Models/people.php");
+require_once("Models/roles.php");
 session_start();
 
 class Personas{
-    public $model;
+    private $model;
+    private $roles;
+
     function __construct()
     {
         $this->model = new People();
+        $this->roles = new Roles();
     }
 
     function crear()
@@ -72,6 +76,7 @@ class Personas{
         if (isset($_SESSION["role"])) {
             switch ($_SESSION["role"]) {
                 case 1:
+                case 3:
                     header("location:/Productos/crear");
                     break;
                 case 2:
@@ -99,6 +104,31 @@ class Personas{
         $modelPeople = new People();
         $modelPeople = $this->model->getUserId($id);
         require_once("Views/People/profile.php");
+    }
+
+    function editarPerfil(){
+        $modelPeople = new People();
+        $modelPeople->setId(intval($_POST['id']));
+        $modelPeople->setName($_POST['name']);
+        $modelPeople->setLastName($_POST['lastName']);
+        $modelPeople->setCuit($_POST['cuit']);
+        if(isset($_SESSION['role']) && $_SESSION['role'] != 2){
+            $modelPeople->setEmail($_POST['email']);
+        } // else traer a la persona y darle el email que tiene 
+        else {
+            $response = $this->model->getUserId(intval($_POST['id']));
+            $modelPeople->setEmail($response->getEmail());
+        }
+
+        if(isset($_SESSION['role']) && $_SESSION['role'] == 3){
+            $modelPeople->setRole_id(intval($_POST['role']));
+        } // else traer a la persona y darle el email que tiene 
+        else {
+            $response = $this->model->getUserId(intval($_POST['id']));
+            $modelPeople->setRole_id($response->getRole_id());
+        }
+        $this->model->updatePeople($modelPeople);
+        header("location:/Usuarios/lista");
     }
 }
 

@@ -171,6 +171,34 @@ class People{
 
         return $modelPeople;
     }
+
+    function updatePeople(People $p){
+        try{
+            $dni = substr(substr($p->getCuit(),2),0,-1) ;
+            $query = "UPDATE crudstore.people SET name=?, lastName=?, dni=?, cuit=?, email=?,role_id=? WHERE id=?;";
+            $this->pdo->prepare($query)->execute(array(
+                $p->getName(),
+                $p->getLastName(),
+                $dni,
+                $p->getCuit(),
+                $p->getEmail(),
+                $p->getRole_id(),
+                $p->getId(),
+            ));
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+    //USEEEEEEERS
+    public function listUsers($id){
+        try{
+            $query = $this->pdo->prepare("SELECT p.id, p.name, p.lastName,p.dni,p.cuit,p.email,p.role_id,r.tipo FROM crudstore.people p INNER JOIN crudstore.roles r on r.id = p.role_id  WHERE p.role_id=?;");
+            $query->execute(array($id));
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
 }
 
 ?>

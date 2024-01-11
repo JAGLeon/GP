@@ -27,9 +27,7 @@
               <!--Notification Menu-->
               <li class="dropdown notification-menu" id="cart"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-cart-plus" style="font-size:18px"></i></a>
                 <ul class="dropdown-menu" id="tableCart">
-                  
-
-
+                  <!--INNERHTML-->
                 </ul>
               </li>
               <!-- User Menu-->
@@ -57,16 +55,29 @@
           <ul class="sidebar-menu">
             <li class="active"><a href="/Inicio/principal"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
             <?php 
-              if($_SESSION['role'] == 1){
+              if($_SESSION['role'] != 2){
                 echo '
                 <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>Productos</span><i class="fa fa-angle-right"></i></a>
                   <ul class="treeview-menu">
-                    <li><a href="/Productos/index"><i class="fa fa-circle-o"></i> Productos</a></li>
+                    <li><a href="/Productos/index"><i class="fa fa-circle-o"></i> Lista</a></li>
                     <li><a href="/Productos/crear"><i class="fa fa-circle-o"></i> Agregar</a></li>
                   </ul>
                 </li>
+                <li class="treeview"><a href="#"><i class="fa fa-users"></i><span> Personas</span><i class="fa fa-angle-right"></i></a>
+                  <ul class="treeview-menu">
+                    <li><a href="/Usuarios/lista"><i class="fa fa-circle-o"></i>Usuarios</a></li>
+                  </ul>';
+                if($_SESSION['role'] == 3){
+                  echo '
+                  <ul class="treeview-menu">
+                    <li><a href="/Usuarios/administradores"><i class="fa fa-circle-o"></i>Administradores</a></li>
+                  </ul>
+                  ';
+                }
+                echo '
+                </li>
                 ';
-              } else{
+              }else{
                 echo '
                 <li class="treeview"><a href="/Inicio/principal"><i class="fa fa-laptop"></i><span>Productos</span></a></li>
                 ';

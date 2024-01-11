@@ -13,13 +13,14 @@ class Productos{
 
     }
     function restriccionUsuario(){
-        if(isset($_SESSION['id']) && $_SESSION["role"] != 1){
+        if(isset($_SESSION['id']) && $_SESSION["role"] == 2){
             header("location:/Inicio/principal");
             exit();
         }
     }
     public function index(){
-        require_once("Views/Products/index.php");
+        $titulo = "Productos";
+        require_once("Views/list.php");
     }
     public function crear(){
         $this->restriccionUsuario();
