@@ -9,6 +9,7 @@
         <p class="funko-prices">$ <?= $item['price'] ?></p> 
         <button id="btnAdd">Agregar al carrito</button>
     </div>
+    <div style="position: absolute;top: -11px;left: 16px;background-color: #b4b1b1;padding: 0 7px;border-radius: 5px;">Stock <?= $item['quantity'] ?></div>
 </div>
 
 

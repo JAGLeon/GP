@@ -1,7 +1,8 @@
 function qs(element) {
     return document.querySelector(element)
 }
-let $cartEvent = qs('#cart');
+let $cartEvent = qs('#cart'),
+$eventBuy =qs('.buyDiv');
 
 document.addEventListener('DOMContentLoaded', e=>{
     const cookies = document.cookie.split(';');
@@ -60,7 +61,7 @@ function updateCart(){
         if(data.info.count == 0){
             priceTotal = `<li class="not-head" style="font-weight:bold;">No hay productos</li>`;
         }else{
-            priceTotal = `<li class="not-head priceTotal" style="font-weight:bold;"><div>TOTAL: $${data.info.total} <br>CANTIDAD: ${data.info.count}</div><div class="buyDiv"><i class="fa fa-money"></i>COMPRAR</div></li>`;
+            priceTotal = `<li class="not-head priceTotal" style="font-weight:bold;"><div>TOTAL: $${data.info.total} <br>CANTIDAD: ${data.info.count}</div><div class="buyDiv" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-money"></i>COMPRAR</div></li>`;
 
         }
 
@@ -88,7 +89,7 @@ function addItemToCart(id){
     fetch(`http://localhost/?/apiCarrito/Accion&action=agregar&id=${id}`)
     .then(res => res.json())
     .then(data => {
-        //console.log(data);
+        //console.log(data); //logica para preguntar cantidad en la bd
         updateCart();
     })
 }
@@ -100,3 +101,10 @@ function removeItemFromCart(id){
         updateCart();
     })
 }
+
+$eventBuy.addEventListener('click', e => {
+    
+})
+
+
+

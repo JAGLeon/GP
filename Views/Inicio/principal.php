@@ -13,7 +13,9 @@
             $response = json_decode(file_get_contents('http://localhost/?/apiProductos/productos&todos=1'),true);
             if($response['status'] == 200){
                 foreach($response['response'] as $item){
-                    require("Views/Products/productCard.php");
+                    if($item["quantity"] != '0'){
+                        require("Views/Products/productCard.php");
+                    }
                 }
             }
         ?>        

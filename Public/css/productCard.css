@@ -1,10 +1,7 @@
-.product{
+.product {
     margin: 0;
     padding: 0;
     font-size: 1.5rem;
-}
-
-.product {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,3 +88,4 @@
     margin-left: 10px;
     cursor: pointer;
 }
+

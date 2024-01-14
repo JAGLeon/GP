@@ -25,7 +25,7 @@ class ApiCarrito{
             echo json_encode(['status'=> 404,'response'=> 'No se puede procesar la solicitud']);
         }   
     }
-    function mostrar($cart){// carga el carrito en la session, ademas se dija de tener stock
+    function mostrar($cart){// carga el carrito en la session, ademas se fija de tener stock
         $fullItems = [];
         $total = 0;
         $totalItems = 0;
@@ -36,7 +36,6 @@ class ApiCarrito{
                 $itemProduct = json_decode($httpRequest,1)['response'];
                 $itemProduct['cantidad'] = $item['cantidad'];
                 $itemProduct['subTotal'] = $item['cantidad'] * $itemProduct['price'];
-
                 $total += $itemProduct['subTotal'];
                 $totalItems += $itemProduct['cantidad'];
 
@@ -49,8 +48,43 @@ class ApiCarrito{
     }
 
     function agregar($cart){
+        // if(isset($_GET['id'])){
+        //     $response = null;
+        //     $itemsCart = json_decode($cart->load(),1); // consultar el carrito
+        //     if(){
+        //         foreach ($itemsCart as $item){
+        //             $httpRequest = file_get_contents('http://localhost/?/apiProductos/productos&item='.$item['id']);
+        //             $jsonCart = json_decode($httpRequest,1); // json carrito accdeder atributos
+        //             if($jsonCart["response"]["quantity"] >= $item['cantidad']){ // 3 
+        //                 $response = $cart->add($_GET['id']);
+        //             }
+        //         }
+        //     }else{
+        //         $response = $cart->add($_GET['id']);
+        //     }
+        //     echo $response;
+        // }else{
+        //     echo json_encode(['status'=> 404,'response'=> 'No se puede procesar la solicitud, falta el id']); 
+        // }
         if(isset($_GET['id'])){
-            $response = $cart->add($_GET['id']);
+            $itemsCart = json_decode($cart->load(),1);
+            $arrayid = [];
+            foreach ($itemsCart as $item){
+                array_push($arrayid, $item['id']);
+            }
+    
+            if(in_array($_GET['id'], $arrayid)){
+                foreach ($itemsCart as $item){
+                    $httpRequest = file_get_contents('http://localhost/?/apiProductos/productos&item='.$item['id']);
+                    $jsonCart = json_decode($httpRequest,1);
+                    if($item['cantidad'] < $jsonCart["response"]["quantity"]){ 
+                        $response = $cart->add($_GET['id']);
+                    }
+                    //echo $jsonCart["response"]["quantity"] . "cantidad <br> " . $item['cantidad'] . "cartCant <br> " . $jsonCart["response"]['id']. "<br> " .  $item['id'];
+                }
+            }else{
+                $response = $cart->add($_GET['id']);
+            }
             echo $response;
         }else{
             echo json_encode(['status'=> 404,'response'=> 'No se puede procesar la solicitud, falta el id']); 
