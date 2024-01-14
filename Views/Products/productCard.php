@@ -1,6 +1,6 @@
 <div class="product col-md-4" >
     <input type="hidden" value="<?= $item['id'] ?>">
-    <a href="/productos/detalle/<?= $item['id'] ?>" class="img">
+    <a href="#" class="img">
     <img src="<?= $item['img'] ?>" class="img-product" alt="">
     </a>
     <div class="description">

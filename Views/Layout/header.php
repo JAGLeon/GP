@@ -66,7 +66,8 @@
                 <li class="treeview"><a href="#"><i class="fa fa-users"></i><span> Personas</span><i class="fa fa-angle-right"></i></a>
                   <ul class="treeview-menu">
                     <li><a href="/Usuarios/lista"><i class="fa fa-circle-o"></i>Usuarios</a></li>
-                  </ul>';
+                  </ul>
+                  ';
                 if($_SESSION['role'] == 3){
                   echo '
                   <ul class="treeview-menu">

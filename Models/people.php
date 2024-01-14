@@ -199,6 +199,15 @@ class People{
             die($e->getMessage());
         }
     }
+
+    public function deletePeople($id){
+        try {
+            $query = "DELETE FROM crudstore.people WHERE id=?";
+            $this->pdo->prepare($query)->execute(array($id));
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
 
 ?>

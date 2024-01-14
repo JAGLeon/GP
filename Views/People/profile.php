@@ -60,7 +60,9 @@
                             <?php if($_SESSION['role'] == 3){?>
                               <select class="form-control" id="role" name="role">
                                 <?php foreach($this->roles->listRoles() as $rol): ?>
-                                  <option value="<?=$rol->id?>" <?php if($modelPeople->getRole_id() == $rol->id){?> selected <?php } ?>><?=$rol->tipo?></option>
+                                  <?php if($rol->id != 3 || ($_SESSION['id'] == $modelPeople->getId())){?>
+                                    <option value="<?=$rol->id?>" <?php if($modelPeople->getRole_id() == $rol->id){?> selected <?php } ?>><?=$rol->tipo?></option>
+                                  <?php } ?>
                                 <?php endforeach; ?>
                               </select>
                             <?php } else { ?>

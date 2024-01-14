@@ -76,9 +76,9 @@
                           <td><?= $user->tipo?></td>
                         <?php } ?>
                         <td> 
-                          <a class="btn btn-info btn-flat" href="/Usuarios/editar&id=<?= $user->id?>"><i class="fa fa-lg fa-pencil"></i>
+                          <a class="btn btn-info btn-flat" href="/Personas/perfil/<?= $user->id?>"><i class="fa fa-lg fa-pencil"></i>
                           </a>
-                          <a class="btn btn-danger btn-flat" href="/Usuarios/eliminar&id=<?=$user->id?>"><i class="fa fa-lg fa-trash"></i>
+                          <a class="btn btn-danger btn-flat" href="/Usuarios/eliminar/<?=$user->id?>"><i class="fa fa-lg fa-trash"></i>
                           </a>
                         </td>
                       </tr>

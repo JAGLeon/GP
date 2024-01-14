@@ -28,11 +28,6 @@ class ApiProductos{
             echo json_encode(['status'=> 400, 'response' => 'No hay accion']);
         }
     }
-
-    
 }
-
-
-
 
 ?>

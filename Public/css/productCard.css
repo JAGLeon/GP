@@ -69,3 +69,25 @@
     background-color: rgba(103,58,183,.8);
     color: white;
 }
+
+
+.priceTotal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-money{
+    color: rgb(27, 240, 27);
+    font-size: 40px;
+}
+
+.buyDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-left: 1px solid black;
+    margin-left: 10px;
+    cursor: pointer;
+}

@@ -60,7 +60,7 @@ function updateCart(){
         if(data.info.count == 0){
             priceTotal = `<li class="not-head" style="font-weight:bold;">No hay productos</li>`;
         }else{
-            priceTotal = `<li class="not-head" style="font-weight:bold;">TOTAL: $${data.info.total} <br>CANTIDAD: ${data.info.count}</li>`;
+            priceTotal = `<li class="not-head priceTotal" style="font-weight:bold;"><div>TOTAL: $${data.info.total} <br>CANTIDAD: ${data.info.count}</div><div class="buyDiv"><i class="fa fa-money"></i>COMPRAR</div></li>`;
 
         }
 

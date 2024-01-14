@@ -128,7 +128,7 @@ class Personas{
             $modelPeople->setRole_id($response->getRole_id());
         }
         $this->model->updatePeople($modelPeople);
-        header("location:/Usuarios/lista");
+        echo '<script>window.history.back();</script>';
     }
 }
 

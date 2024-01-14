@@ -16,14 +16,17 @@ Class Usuarios{
         require_once("Views/list.php");
     }
 
-    public function editar(){
-        $modelPeople = $this->model->getUserId($_GET['id']);
-        require_once("Views/People/profile.php");
-    }
-
     public function administradores(){
         $titulo = "Administradores";
         require_once("Views/list.php");
+    }
+
+    public function eliminar(){
+        $tags = isset($_GET) ? array_keys($_GET) : null;
+        $url = explode('/',$tags[0]);
+        $id = $url[3];
+        $this->model->deletePeople($id);
+        echo '<script>window.history.back();</script>';
     }
 }
 
