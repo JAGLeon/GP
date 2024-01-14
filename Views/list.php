@@ -8,7 +8,7 @@
           </div>
           <?php if($titulo == "Productos"){?>
             <div>
-              <a class="btn btn-primary btn-flat" href="/Productos/crear"><i class="fa fa-lg fa-plus"> Agregar</i></a>
+              <a class="btn btn-primary btn-flat" href="/Productos/crear" style="border-radius: 10px;">Agregar</i></a>
             </div>
           <?php } ?>
         </div>

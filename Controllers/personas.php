@@ -37,17 +37,21 @@ class Personas{
             $modelPeople->setCuit($_POST["cuit"]);
             $response = $this->model->getPeopleEmail($_POST["email"]);
             if($response){
-                echo '<script>alert("Este email esta registrado");window.location = "../Personas/crear";</script>';
+                $_SESSION['msjDanger'] = "Este email esta registrado";
+                echo '<script>window.history.back();</script>';
                 exit();
             }
             $response = $this->model->InsertPeople($modelPeople);
             if($response){
-                echo '<script>alert("Se registro");window.location = "../Personas/crear";</script>';
+                $_SESSION['msjSuccess'] = "Se registro";
+                echo '<script>window.location = "../Personas/crear";</script>';
             } else {
-                echo '<script>alert("Ocurrio un error en la base de datos");window.location = "../Personas/crear";</script>';
+                $_SESSION['msjWarning'] = "Ocurrio un error en la base de datos";
+                echo '<script>window.location = "../Personas/crear";</script>';
             }
         } else {
-            echo '<script>alert("Hay campos vacios");window.location = "../Personas/crear";</script>';
+            $_SESSION['msjDanger'] = "Hay campos vacios";
+            echo '<script>window.history.back();</script>';
         }
     }
     function ingresar(){
@@ -57,7 +61,8 @@ class Personas{
 
         $response = $this->model->getUserLogin($modelPeople);
         if(!$response){
-            echo '<script>alert("Email o contraseña incorrecto");window.location = "../Personas/crear";</script>';
+            $_SESSION['msjDanger'] = "Email o contraseña incorrecto";
+            echo '<script>window.location = "../Personas/crear";</script>';
             exit();
         }
         $this->redireccionPersona($response);
@@ -122,7 +127,7 @@ class Personas{
 
         if(isset($_SESSION['role']) && $_SESSION['role'] == 3){
             $modelPeople->setRole_id(intval($_POST['role']));
-        } // else traer a la persona y darle el email que tiene 
+        } 
         else {
             $response = $this->model->getUserId(intval($_POST['id']));
             $modelPeople->setRole_id($response->getRole_id());

@@ -149,6 +149,18 @@ class Product{
             die($e->getMessage());
         }
     }
+
+
+    public function updateQuantityBuy(Array $products){
+        try{
+            $product = $this->getProduct($products[1]);
+            $newQuantity = $product->getQuantity() - $products[0];
+            $query = "UPDATE crudstore.products SET quantity=? WHERE id=?;";
+            $this->pdo->prepare($query)->execute(array($newQuantity,$products[1]));
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
 }
 
 

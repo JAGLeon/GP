@@ -48,24 +48,6 @@ class ApiCarrito{
     }
 
     function agregar($cart){
-        // if(isset($_GET['id'])){
-        //     $response = null;
-        //     $itemsCart = json_decode($cart->load(),1); // consultar el carrito
-        //     if(){
-        //         foreach ($itemsCart as $item){
-        //             $httpRequest = file_get_contents('http://localhost/?/apiProductos/productos&item='.$item['id']);
-        //             $jsonCart = json_decode($httpRequest,1); // json carrito accdeder atributos
-        //             if($jsonCart["response"]["quantity"] >= $item['cantidad']){ // 3 
-        //                 $response = $cart->add($_GET['id']);
-        //             }
-        //         }
-        //     }else{
-        //         $response = $cart->add($_GET['id']);
-        //     }
-        //     echo $response;
-        // }else{
-        //     echo json_encode(['status'=> 404,'response'=> 'No se puede procesar la solicitud, falta el id']); 
-        // }
         if(isset($_GET['id'])){
             $itemsCart = json_decode($cart->load(),1);
             $arrayid = [];

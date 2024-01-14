@@ -47,7 +47,6 @@ class Productos{
         $modelProduct->setQuantity($_POST['quantityProduct']);
         $modelProduct->setImg($_POST['imgProduct']);
 
-
         // $pathInfo = pathinfo($_FILES["imgProduct"]["name"]);
         // echo var_dump($pathInfo);
         // if(isset($img) && $img != ""){
@@ -65,6 +64,17 @@ class Productos{
         $id = $url[3];
         $this->model->deleteProducts($id);
         header("location:/Productos/index");
+    }
+
+    public function compra(){
+        for($i = 1; $i <= count($_POST);$i++){
+            $exp = explode(',',$_POST["id$i"]);
+            $this->model->updateQuantityBuy($exp);
+        }
+        if(isset($_SESSION["carrito"])){
+            unset($_SESSION["carrito"]);
+        }
+        echo '<script>window.history.back();</script>';
     }
 
 }
