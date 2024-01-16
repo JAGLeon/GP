@@ -26,7 +26,10 @@
       <?= $_SESSION['msjWarning'] ?>
     </div>
   <?php endif;?>
-
+  <div id="alert-danger1" role="alert">
+  </div>
+  <div id="alert-danger2" role="alert">
+  </div>
   <div class="main">
     <input type="checkbox" id="chk" aria-hidden="true">
 

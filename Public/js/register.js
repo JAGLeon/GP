@@ -8,7 +8,7 @@ $inputEmail1 = qs('#email'),
 $inputPassword1 = qs('#password'),
 $inputCuit1 = qs('#cuit');
 $formRegister = qs('#formRegister'),
-$errors1 = qs('#errors1'),
+$errors1 = qs('#alert-danger1'),
 $eye1 = qs('#eye'),
 $pass1 = qs('#password'),
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
@@ -19,19 +19,23 @@ $inputName1.addEventListener("blur", () => {
     switch (true) {
         case !$inputName1.value.trim():
             $errors1.innerHTML = "Ingrese su nombre";
+            $errors1.style.display = "flex";
             $inputName1.classList.add("is-invalid");
             break;
         case $inputName1.value.trim().length < 2:
             $errors1.innerHTML = "Mínimo 2 carácteres";
+            $errors1.style.display = "flex";
             $inputName1.classList.add("is-invalid");
             break;
         case !regExAlpha.test($inputName1.value):
             $errors1.innerHTML = "Nombre inválido";
+            $errors1.style.display = "flex";
             $inputName1.classList.add("is-invalid");
             break;
         default: 
             $inputName1.classList.remove("is-invalid");
             $errors1.innerHTML = "";
+            $errors1.style.display = "none";
             break;
     };
 });
@@ -40,19 +44,23 @@ $inputLastName1.addEventListener("blur", () => {
     switch (true) {
         case !$inputLastName1.value.trim():
             $errors1.innerHTML = "Ingrese su apellido";
+            $errors1.style.display = "flex";
             $inputLastName1.classList.add("is-invalid");
             break;
         case $inputLastName1.value.trim().length < 2:
             $errors1.innerHTML = "Mínimo 2 carácteres";
+            $errors1.style.display = "flex";
             $inputLastName1.classList.add("is-invalid");
             break;
         case !regExAlpha.test($inputLastName1.value):
             $errors1.innerHTML = "Apellido inválido";
+            $errors1.style.display = "flex";
             $inputLastName1.classList.add("is-invalid");
             break;
         default: 
             $inputLastName1.classList.remove("is-invalid");
             $errors1.innerHTML = "";
+            $errors1.style.display = "none";
             break;
     };
 });
@@ -61,10 +69,12 @@ $inputCuit1.addEventListener("blur", (e) => {
     switch (true) {
         case !$inputCuit1.value.trim():
             $errors1.innerHTML = "Se debe un CUIT";
+            $errors1.style.display = "flex";
             $inputCuit1.classList.add("is-invalid");
             break;
         default: 
             $inputCuit1.classList.remove("is-invalid");
+            $errors1.style.display = "none";
             $errors1.innerHTML = "";
             break;
     }
@@ -73,16 +83,19 @@ $inputCuit1.addEventListener("blur", (e) => {
 $inputEmail1.addEventListener("blur", () => {
     switch (true) {
         case !$inputEmail1.value.trim():
-            $errors1.innerHTML = "Campo obligatorio complete con<br/>su email";
+            $errors1.innerHTML = "Campo obligatorio complete con su email";
+            $errors1.style.display = "flex";
             $inputEmail1.classList.add("is-invalid");
             break;
         case !regExEmail1.test($inputEmail1.value):
             $errors1.innerHTML = "Email inválido";
+            $errors1.style.display = "flex";
             $inputEmail1.classList.add("is-invalid");
             break;
         default: 
             $inputEmail1.classList.remove("is-invalid");
             $errors1.innerHTML = "";
+            $errors1.style.display = "none";
             break;
     };
 });
@@ -90,17 +103,20 @@ $inputEmail1.addEventListener("blur", () => {
 $inputPassword1.addEventListener('blur', function(){
     switch (true) {
         case !$inputPassword1.value.trim():
-            $errors1.innerHTML = 'Campo obligatorio complete con<br/>una contraseña';
+            $errors1.innerHTML = 'Campo obligatorio complete con una contraseña';
+            $errors1.style.display = "flex";
             $inputPassword1.classList.add('is-invalid');
             $eye1.style.right = "-240px"; 
             break;
         case !regExPass.test($inputPassword1.value):
-            $errors1.innerHTML = 'Mínimo 8 carácteres, debe tener<br/>mayúscula, minúscula, número';
+            $errors1.innerHTML = 'Mínimo 8 carácteres, debe tener mayúscula, minúscula, número';
+            $errors1.style.display = "flex";
             $inputPassword1.classList.add('is-invalid');
             $eye1.style.right = "-240px"; 
             break;    
         default:
             $inputPassword1.classList.remove("is-invalid");
+            $errors1.style.display = "none";
             $errors1.innerHTML = "";
             $eye1.style.right = "-260px";
             break;

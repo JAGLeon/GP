@@ -18,6 +18,7 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     margin-bottom: 3px;
+    background-color: white;
 }
 
 .product a.img img.img-product{
@@ -25,6 +26,7 @@
     height: 100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    object-fit: contain;
 }
 
 .product div.description {
@@ -89,3 +91,12 @@
     cursor: pointer;
 }
 
+.filtro{
+    display: none;
+}
+
+#search::-webkit-inner-spin-button, 
+#search::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

@@ -3,7 +3,7 @@ function qs(element) {
 }
     let $inputEmail = qs('#email2'),
     $inputPassword = qs('#password2'),
-    $errors = qs('#errors2'),
+    $errors = qs('#alert-danger2'),
     $eye = qs('#eye2'),
     $pass = qs('#password2'),
     $formLogin = qs('#formLogin'),
@@ -13,15 +13,18 @@ function qs(element) {
         switch (true) {
             case !$inputEmail.value.trim():
                 $errors.innerHTML = "Se debe ingresar un email";
+                $errors.style.display = "flex";
                 $inputEmail.classList.add("is-invalid");
                 break;
             case !regExEmail.test($inputEmail.value):
                 $errors.innerHTML = "El email no es valido";
+                $errors.style.display = "flex";
                 $inputEmail.classList.add("is-invalid");
                 break;
             default: 
                 $inputEmail.classList.remove("is-invalid");
                 $errors.innerHTML = "";
+                $errors.style.display = "none";
                 break;
         }
     });
@@ -30,12 +33,14 @@ function qs(element) {
         switch (true) {
             case !$inputPassword.value.trim():
                 $errors.innerHTML = "Se debe ingresar una contraseña";
+                $errors.style.display = "flex";
                 $inputPassword.classList.add("is-invalid");
                 $eye.style.right = "-240px"; 
                 break;
             default: 
                 $inputPassword.classList.remove("is-invalid");
                 $errors.innerHTML = "";
+                $errors.style.display = "none";
                 $eye.style.right = "-260px";
                 break;
         }

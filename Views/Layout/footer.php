@@ -5,5 +5,6 @@
     <script src="Public/js/plugins/pace.min.js"></script>
     <script src="Public/js/main.js"></script>
     <script src="Public/js/cart.js"></script>
+    <script src="Public/js/search.js"></script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 <?php 
   require_once("Views/Layout/header.php");
 ?>
+
 <div class="content-wrapper">
         <div class="page-title">
           <div>
@@ -12,11 +13,15 @@
             </div>
           <?php } ?>
         </div>
+
         <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-body">
                 <table class="table table-hover table-bordered" id="sampleTable">
+                  <nav class="navbar navbar-light bg-light">
+                    <input class="form-control search" type="<?php if($titulo == "Productos"){echo "text";}else{echo "number";} ?>" id="search" placeholder="Buscar">
+                  </nav>
                   <thead>
                     <tr>
                     <?php if($titulo == "Productos") {?>
@@ -44,9 +49,9 @@
                   </thead>
                   <tbody>
                     <?php if($titulo == "Productos"){foreach($this->model->listProducts() as $product): ?>
-                      <tr>
+                      <tr class="rowArticle">
                         <td><?= $product->id?></td>
-                        <td><?= $product->name?></td>
+                        <td class="article"><?= $product->name?></td>
                         <td><?= $product->brand?></td>
                         <td><?= $product->quantity?></td>
                         <td><?= $product->cost?></td>
@@ -69,7 +74,7 @@
                         <td><?= $user->id ?></td>
                         <td><?= $user->name?></td>
                         <td><?= $user->lastName?></td>
-                        <td><?= $user->dni?></td>
+                        <td class="article"><?= $user->dni?></td>
                         <td><?= $user->cuit?></td>
                         <td><?= $user->email?></td>
                         <?php if($_SESSION['role'] == 3){  ?>
