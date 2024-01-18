@@ -68,6 +68,15 @@
     background-color: rgba(103,58,183,.8);
     color: white;
 }
+.stockProductCard{
+    position: absolute;
+    top: -11px;
+    left: 16px;
+    background-color: #e9e1e1;
+    padding: 0 7px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 3px #b3b3b3;
+}
 
 
 .priceTotal{

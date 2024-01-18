@@ -13,6 +13,7 @@
     <!-- CSS-->
     <link rel="stylesheet" type="text/css" href="Public/css/main.css">
     <link rel="stylesheet" type="text/css" href="Public/css/productCard.css">
+    <link rel="stylesheet" type="text/css" href="Public/css/modelExito.css">
     <title>Lion Store</title>
   </head>
   <body class="sidebar-mini fixed">
@@ -53,7 +54,7 @@
           </div>
           <!-- Sidebar Menu-->
           <ul class="sidebar-menu">
-            <li class="active"><a href="/Inicio/principal"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+            <li class="active"><a href="/Inicio/principal"><i class="fa fa-dashboard"></i><span>Tienda</span></a></li>
             <?php 
               if($_SESSION['role'] != 2){
                 echo '

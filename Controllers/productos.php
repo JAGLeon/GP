@@ -6,7 +6,6 @@ class Productos{
     private $model;
     private $modelPersonas;
 
-
     public function __construct(){
         $this->model = new Product();
         $this->modelPersonas = new Personas();
@@ -42,8 +41,8 @@ class Productos{
         $modelProduct->setId(intval($_POST["idProduct"]));
         $modelProduct->setName($_POST['nameProduct']);
         $modelProduct->setBrand($_POST['brandProduct']);
-        $modelProduct->setCost($_POST['costProduct']);
-        $modelProduct->setPrice($_POST['priceProduct']);
+        $modelProduct->setCost($_POST['costProduct']); 
+        $modelProduct->setPrice($_POST['priceProduct']); 
         $modelProduct->setQuantity($_POST['quantityProduct']);
         $modelProduct->setImg($_POST['imgProduct']);
 
@@ -67,16 +66,22 @@ class Productos{
     }
 
     public function compra(){
-        for($i = 1; $i <= count($_POST);$i++){
-            $exp = explode(',',$_POST["id$i"]);
-            $this->model->updateQuantityBuy($exp);
-        }
         if(isset($_SESSION["carrito"])){
+            for($i = 1; $i <= count($_POST);$i++){
+                $exp = explode(',',$_POST["id$i"]);
+                $this->model->updateQuantityBuy($exp);
+            }
             unset($_SESSION["carrito"]);
+            $_SESSION["msjExito"] = "¡Gracias por su compra!";
         }
-        echo '<script>window.history.back();</script>';
+        header("location:/Inicio/principal");
     }
 
+    public function cerrarCompra(){
+        if(isset($_SESSION["msjExito"])){
+            unset($_SESSION["msjExito"]);
+        }
+        header("location:/Inicio/principal");
+    }
 }
-
 ?>

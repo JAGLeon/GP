@@ -1,6 +1,15 @@
 function qs(element) {
     return document.querySelector(element)
 }
+
+const formatoPesos = (number) => {
+    const exp = /(\d)(?=(\d{3})+(?!\d))/g;
+    const rep = '$1,';
+    let arr = number.toString().split('.');
+    arr[0] = arr[0].replace(exp,rep);
+    return arr[1] ? arr.join('.'): arr[0];
+}
+
 let $cartEvent = qs('#cart');
 
 document.addEventListener('DOMContentLoaded', e=>{
@@ -43,9 +52,9 @@ function updateCart(){
                         <div class="media-body">
                             <input type="hidden" value="${x.id}" id="cartIdProduct"/>
                             <span class="block">Nombre: ${x.name}</span>
-                            <span class="block">Precio: $${x.price}</span>
+                            <span class="block">Precio: $${formatoPesos(x.price)}</span>
                             <span class="block">Cantidad: ${x.cantidad}</span>
-                            <span class="block">SubTotal: $${x.subTotal}</span>
+                            <span class="block">SubTotal: $${formatoPesos(x.subTotal)}</span>
                             <div class="btns">
                                 <button id="btnRemove">
                                     Quitar 1 del carrito
@@ -60,7 +69,7 @@ function updateCart(){
         if(data.info.count == 0){
             priceTotal = `<li class="not-head" style="font-weight:bold;">No hay productos</li>`;
         }else{
-            priceTotal = `<li class="not-head priceTotal" style="font-weight:bold;"><div>TOTAL: $${data.info.total} <br>CANTIDAD: ${data.info.count}</div><div class="buyDiv" onclick="buyCart();" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-money"></i>COMPRAR</div></li>`;
+            priceTotal = `<li class="not-head priceTotal" style="font-weight:bold;"><div>TOTAL: $${formatoPesos(data.info.total)} <br>CANTIDAD: ${data.info.count}</div><div class="buyDiv" onclick="buyCart();" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-money"></i>COMPRAR</div></li>`;
 
         }
 
@@ -123,16 +132,16 @@ function buyCart(){
                         <div class="media-body" style="padding-left: 20px;">
                             <input type="hidden" value="${x.cantidad},${x.id}" name="id${i}" id="cartIdProduct"/>
                             <span class="block">Nombre: ${x.name}</span>
-                            <span class="block">Precio: $${x.price}</span>
+                            <span class="block">Precio: $${formatoPesos(x.price)}</span>
                             <span class="block">Cantidad: ${x.cantidad}</span>
-                            <span class="block">SubTotal: $${x.subTotal}</span>
+                            <span class="block">SubTotal: $${formatoPesos(x.subTotal)}</span>
                         </div>
                     </div>
                 </div>            
             `;
             i += 1;
         });
-        priceTotal = `<li class="not-head priceTotal" style="font-weight:bold;justify-content: space-around;margin-top: 8px;"><div>TOTAL: $${data.info.total}</div><div>PRODUCTOS: ${data.info.count}</div></li>
+        priceTotal = `<li class="not-head priceTotal" style="font-weight:bold;justify-content: space-around;margin: 20px 0px;"><div>TOTAL: $${formatoPesos(data.info.total)}</div><div>PRODUCTOS: ${data.info.count}</div></li>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" style="color:black;" data-dismiss="modal">Cerrar</button>
         <button type="submit" class="btn btn-primary">Confirmar</button>

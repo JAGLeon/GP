@@ -49,13 +49,13 @@
                   </thead>
                   <tbody>
                     <?php if($titulo == "Productos"){foreach($this->model->listProducts() as $product): ?>
-                      <tr class="rowArticle">
+                      <tr>
                         <td><?= $product->id?></td>
                         <td class="article"><?= $product->name?></td>
                         <td><?= $product->brand?></td>
                         <td><?= $product->quantity?></td>
-                        <td><?= $product->cost?></td>
-                        <td><?= $product->price?></td>
+                        <td><?= number_format($product->cost)?></td>
+                        <td><?= number_format($product->price)?></td>
                         <td>
                           <div style="height: 50px;width: 50px;">
                             <img src="<?= $product->img?>" style="width: 100%;height: 100%;object-fit: cover;">
@@ -74,8 +74,8 @@
                         <td><?= $user->id ?></td>
                         <td><?= $user->name?></td>
                         <td><?= $user->lastName?></td>
-                        <td class="article"><?= $user->dni?></td>
-                        <td><?= $user->cuit?></td>
+                        <td><?= $user->dni?></td>
+                        <td class="article"><?= $user->cuit?></td>
                         <td><?= $user->email?></td>
                         <?php if($_SESSION['role'] == 3){  ?>
                           <td><?= $user->tipo?></td>
