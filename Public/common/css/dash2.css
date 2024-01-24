@@ -1,0 +1,32 @@
+.menugrande{
+    display: none;
+}
+
+.menuchico{
+    display: block;
+    width: 60px;
+}
+
+.content{
+    width: calc(100% - 110px);
+    float: right;
+    margin-right: 20px;
+}
+
+.imgout{
+    position: relative;
+    z-index: 2300;
+    left: 16px;
+    top: 5px;
+    width: 30px;
+    text-align: center;
+}
+
+.bg-menuchico{
+    background-color: aqua;
+}
+
+
+.btn-toggle-nav a{
+    margin-left: 0.45rem;
+}

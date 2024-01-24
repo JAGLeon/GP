@@ -1,0 +1,24 @@
+{
+    "controllers":[
+        {
+            "controller" : "main",
+            "access" : "private" 
+        },
+        {
+            "controller" : "login",
+            "access" : "public" 
+        },
+        {
+            "controller" : "errors",
+            "access" : "public" 
+        },
+        {
+            "controller" : "logs",
+            "access" : "public" 
+        },
+        {
+            "controller" : "personas",
+            "access" : "private" 
+        }
+    ]
+}

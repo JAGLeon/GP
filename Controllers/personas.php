@@ -1,15 +1,19 @@
 <?php
 
-class Personas{
+class Personas extends Controller{
 
     function __construct()
     {
-        echo "estoy en personas<br>";
+        parent::__construct();
+        //echo "estoy en personas<br>";
     }
 
-    function buscar(){
-        $prueba="Palermitano";
-        return "Eh $prueba estoy en el metodo buscar<br>";
+    function index(){
+        echo"estoy en index de persona";
+    }
+
+    function buscar($params){
+       $this->view->render('index');
     }
 }
 

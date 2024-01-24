@@ -1,0 +1,26 @@
+.menugrande{
+    display: block;
+}
+
+.menuchico{
+    display: none;
+}
+
+.content{
+    width: calc(100% - 320px);
+    float: right;
+    margin-right: 20px;
+}
+
+
+
+
+
+.imgout{
+    position: relative;
+    z-index: 2300;
+    left: 235px;
+    top: 5px;
+    width: 30px;
+    text-align: center;
+}

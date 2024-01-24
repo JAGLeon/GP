@@ -1,0 +1,437 @@
+/* CSS Document */
+
+@font-face { 
+	font-family: "Oswald-Bold"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-Bold.woff") format("woff"), url("fonts/Oswald-Bold.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-BoldItalic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-BoldItalic.woff") format("woff"), url("fonts/Oswald-BoldItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-DemiBold"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-DemiBold.woff") format("woff"), url("fonts/Oswald-DemiBold.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-Demi-BoldItalic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-Demi-BoldItalic.woff") format("woff"), url("fonts/Oswald-Demi-BoldItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-ExtraLight"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-ExtraLight.woff") format("woff"), url("fonts/Oswald-ExtraLight.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-Extra-LightItalic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-Extra-LightItalic.woff") format("woff"), url("fonts/Oswald-Extra-LightItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-Heavy"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-Heavy.woff") format("woff"), url("fonts/Oswald-Heavy.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-HeavyItalic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-HeavyItalic.woff") format("woff"), url("fonts/Oswald-HeavyItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-Light"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-Light.woff") format("woff"), url("fonts/Oswald-Light.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-LightItalic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-LightItalic.woff") format("woff"), url("fonts/Oswald-LightItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-Medium"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-Medium.woff") format("woff"), url("fonts/Oswald-Medium.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-MediumItalic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-MediumItalic.woff") format("woff"), url("fonts/Oswald-MediumItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-Regular"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-Regular.woff") format("woff"), url("fonts/Oswald-Regular.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-RegularItalic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-Regular.woff") format("woff"), url("fonts/Oswald-Regular.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Oswald-Stencil"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/Oswald-Regular.woff") format("woff"), url("fonts/Oswald-Regular.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "OpenSans"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/OpenSans-Bold.woff") format("woff"), url("fonts/OpenSans-Bold.ttf") format("truetype"); 
+}
+
+
+@font-face { 
+	font-family: "OpenSans-Italic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/OpenSans-BoldItalic.woff") format("woff"), url("fonts/OpenSans-BoldItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "OpenSans-ExtraBold"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/OpenSans-ExtraBold.woff") format("woff"), url("fonts/OpenSans-ExtraBold.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "OpenSans-ExtraBold-Italic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/OpenSans-ExtraBoldItalic.woff") format("woff"), url("fonts/OpenSans-ExtraBoldItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "OpenSans-ComunItalic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/OpenSans-Italic.woff") format("woff"), url("fonts/OpenSans-Italic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "OpenSans-Light"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/OpenSans-Light.woff") format("woff"), url("fonts/OpenSans-Light.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "OpenSans-Light-Italic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/OpenSans-LightItalic.woff") format("woff"), url("fonts/OpenSans-LightItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "OpenSans-Regular"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/OpenSans-Regular.woff") format("woff"), url("fonts/OpenSans-Regular.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "OpenSans-Semibold"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/OpenSans-Semibold.woff") format("woff"), url("fonts/OpenSans-Semibold.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "OpenSans-SemiboldItalic"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/OpenSans-SemiboldItalic.woff") format("woff"), url("fonts/OpenSans-SemiboldItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "TeluguMN"; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: local("?"), url("fonts/TeluguMN-01.woff") format("woff"), url("fonts/TeluguMN-01.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "TeluguMN-Bold"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/TeluguMN-Bold-02.woff") format("woff"), url("fonts/TeluguMN-Bold-02.ttf") format("truetype"); 
+}
+
+
+
+@font-face { 
+	font-family: "Nunito-Black"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-Black.woff") format("woff"), url("fonts/Nunito-Black.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-BlackItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-BlackItalic.woff") format("woff"), url("fonts/Nunito-BlackItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-Bold"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-Bold.woff") format("woff"), url("fonts/Nunito-Bold.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-BoldItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-BoldItalic.woff") format("woff"), url("fonts/Nunito-BoldItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-ExtraBold"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-ExtraBold.woff") format("woff"), url("fonts/Nunito-ExtraBold.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-ExtraBoldItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-ExtraBoldItalic.woff") format("woff"), url("fonts/Nunito-ExtraBoldItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-ExtraLight"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-ExtraLight.woff") format("woff"), url("fonts/Nunito-ExtraLight.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-ExtraLightItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-ExtraLightItalic.woff") format("woff"), url("fonts/Nunito-ExtraLightItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-Italic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-Italic.woff") format("woff"), url("fonts/Nunito-Italic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-Light"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-Light.woff") format("woff"), url("fonts/Nunito-Light.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-LightItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-LightItalic.woff") format("woff"), url("fonts/Nunito-LightItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-Regular"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-Regular.woff") format("woff"), url("fonts/Nunito-Regular.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-SemiBold"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-SemiBold.woff") format("woff"), url("fonts/Nunito-SemiBold.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Nunito-SemiBoldItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Nunito-SemiBoldItalic.woff") format("woff"), url("fonts/Nunito-SemiBoldItalic.ttf") format("truetype"); 
+}
+
+
+
+@font-face { 
+	font-family: "Tiempo-Bold"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Tiempo-Bold.woff") format("woff"), url("fonts/Tiempo-Bold.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Tiempo-Regular"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Tiempo-Regular.woff") format("woff"), url("fonts/Tiempo-Regular.ttf") format("truetype"); 
+}
+
+
+
+
+@font-face { 
+	font-family: "Roboto-Black"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-Black.woff") format("woff"), url("fonts/Roboto-Black.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-BlackItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-BlackItalic.woff") format("woff"), url("fonts/Roboto-BlackItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-Bold"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-Bold.woff") format("woff"), url("fonts/Roboto-Bold.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-BoldItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-BoldItalic.woff") format("woff"), url("fonts/Roboto-BoldItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-Italic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-Italic.woff") format("woff"), url("fonts/Roboto-Italic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-Light"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-Light.woff") format("woff"), url("fonts/Roboto-Light.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-LightItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-LightItalic.woff") format("woff"), url("fonts/Roboto-LightItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-Medium"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-Medium.woff") format("woff"), url("fonts/Roboto-Medium.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-MediumItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-MediumItalic.woff") format("woff"), url("fonts/Roboto-MediumItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-Regular"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-Regular.woff") format("woff"), url("fonts/Roboto-Regular.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-Thin"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-Thin.woff") format("woff"), url("fonts/Roboto-Thin.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Roboto-ThinItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/Roboto-ThinItalic.woff") format("woff"), url("fonts/Roboto-ThinItalic.ttf") format("truetype"); 
+}
+
+
+@font-face { 
+	font-family: "RobotoCondensed-Bold"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/RobotoCondensed-Bold.woff") format("woff"), url("fonts/RobotoCondensed-Bold.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "RobotoCondensed-BoldItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/RobotoCondensed-BoldItalic.woff") format("woff"), url("fonts/RobotoCondensed-BoldItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "RobotoCondensed-Italic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/RobotoCondensed-Italic.woff") format("woff"), url("fonts/RobotoCondensed-Italic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "RobotoCondensed-Light"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/RobotoCondensed-Light.woff") format("woff"), url("fonts/RobotoCondensed-Light.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "RobotoCondensed-LightItalic"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/RobotoCondensed-LightItalic.woff") format("woff"), url("fonts/RobotoCondensed-LightItalic.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "RobotoCondensed-Regular"; 
+	font-style: normal; 
+	font-weight: bold; 
+	src: local("?"), url("fonts/RobotoCondensed-Regular.woff") format("woff"), url("fonts/RobotoCondensed-Regular.ttf") format("truetype"); 
+}
