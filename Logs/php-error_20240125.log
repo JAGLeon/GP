@@ -1,0 +1,175 @@
+[25-Jan-2024 15:18:00 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 29
+[25-Jan-2024 15:18:14 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 15:18:19 UTC] existPOST : No existe el parametro usuario
+[25-Jan-2024 15:55:51 UTC] existPOST : No existe el parametro usuario
+[25-Jan-2024 15:55:51 UTC] PHP Warning:  A non-numeric value encountered in C:\Websites\GP\Controllers\login.php on line 18
+[25-Jan-2024 15:55:51 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 15:55:51 UTC] PHP Warning:  A non-numeric value encountered in C:\Websites\GP\Controllers\login.php on line 23
+[25-Jan-2024 15:57:00 UTC] existPOST : No existe el parametro usuario
+[25-Jan-2024 15:57:00 UTC] PHP Warning:  A non-numeric value encountered in C:\Websites\GP\Controllers\login.php on line 18
+[25-Jan-2024 15:57:00 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 15:57:00 UTC] PHP Warning:  A non-numeric value encountered in C:\Websites\GP\Controllers\login.php on line 23
+[25-Jan-2024 15:57:15 UTC] existPOST : No existe el parametro usuario
+[25-Jan-2024 15:57:15 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 16:00:51 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 16:00:55 UTC] existPOST : No existe el parametro usuario
+[25-Jan-2024 17:29:22 UTC] existPOST : No existe el parametro asd
+[25-Jan-2024 17:29:22 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 17:29:26 UTC] existPOST : No existe el parametro asd
+[25-Jan-2024 17:29:26 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 17:29:30 UTC] existPOST : No existe el parametro asd
+[25-Jan-2024 17:29:30 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 17:40:09 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 33
+[25-Jan-2024 17:46:50 UTC] PHP Notice:  Array to string conversion in C:\Websites\GP\Controllers\login.php on line 32
+[25-Jan-2024 18:01:01 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 19:31:27 UTC] PHP Parse error:  syntax error, unexpected '$sql' (T_VARIABLE) in C:\Websites\GP\Models\loginModel.php on line 12
+[25-Jan-2024 19:31:49 UTC] PHP Parse error:  syntax error, unexpected '$sql' (T_VARIABLE) in C:\Websites\GP\Models\loginModel.php on line 12
+[25-Jan-2024 19:31:50 UTC] PHP Parse error:  syntax error, unexpected '$sql' (T_VARIABLE) in C:\Websites\GP\Models\loginModel.php on line 12
+[25-Jan-2024 19:32:19 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 19:32:35 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 19:33:16 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 19:37:49 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 19:37:56 UTC] existPOST : No existe el parametro clave
+[25-Jan-2024 19:38:20 UTC] DataBase :: Connect = Error en conexion de base de datos PDOException: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+ in C:\Websites\GP\Libs\dataBase.php:22
+Stack trace:
+#0 C:\Websites\GP\Libs\dataBase.php(22): PDO->__construct()
+#1 C:\Websites\GP\Models\loginModel.php(12): DataBase->connect()
+#2 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#3 C:\Websites\GP\Libs\app.php(52): Login->in()
+#4 C:\Websites\GP\index.php(8): App->__construct()
+#5 {main}
+[25-Jan-2024 19:38:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Websites\GP\Models\loginModel.php:13
+Stack trace:
+#0 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#1 C:\Websites\GP\Libs\app.php(52): Login->in()
+#2 C:\Websites\GP\index.php(8): App->__construct()
+#3 {main}
+  thrown in C:\Websites\GP\Models\loginModel.php on line 13
+[25-Jan-2024 19:38:41 UTC] DataBase :: Connect = Error en conexion de base de datos PDOException: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+ in C:\Websites\GP\Libs\dataBase.php:22
+Stack trace:
+#0 C:\Websites\GP\Libs\dataBase.php(22): PDO->__construct()
+#1 C:\Websites\GP\Models\loginModel.php(12): DataBase->connect()
+#2 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#3 C:\Websites\GP\Libs\app.php(52): Login->in()
+#4 C:\Websites\GP\index.php(8): App->__construct()
+#5 {main}
+[25-Jan-2024 19:38:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Websites\GP\Models\loginModel.php:13
+Stack trace:
+#0 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#1 C:\Websites\GP\Libs\app.php(52): Login->in()
+#2 C:\Websites\GP\index.php(8): App->__construct()
+#3 {main}
+  thrown in C:\Websites\GP\Models\loginModel.php on line 13
+[25-Jan-2024 19:38:41 UTC] PHP Parse error:  syntax error, unexpected ')', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in C:\Websites\GP\Models\loginModel.php on line 15
+[25-Jan-2024 19:38:41 UTC] PHP Parse error:  syntax error, unexpected ')', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in C:\Websites\GP\Models\loginModel.php on line 15
+[25-Jan-2024 19:51:18 UTC] DataBase :: Connect = Error en conexion de base de datos PDOException: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+ in C:\Websites\GP\Libs\dataBase.php:22
+Stack trace:
+#0 C:\Websites\GP\Libs\dataBase.php(22): PDO->__construct()
+#1 C:\Websites\GP\Models\loginModel.php(13): DataBase->connect()
+#2 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#3 C:\Websites\GP\Libs\app.php(52): Login->in()
+#4 C:\Websites\GP\index.php(8): App->__construct()
+#5 {main}
+[25-Jan-2024 19:51:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Websites\GP\Models\loginModel.php:14
+Stack trace:
+#0 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#1 C:\Websites\GP\Libs\app.php(52): Login->in()
+#2 C:\Websites\GP\index.php(8): App->__construct()
+#3 {main}
+  thrown in C:\Websites\GP\Models\loginModel.php on line 14
+[25-Jan-2024 19:51:46 UTC] DataBase :: Connect = Error en conexion de base de datos PDOException: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+ in C:\Websites\GP\Libs\dataBase.php:22
+Stack trace:
+#0 C:\Websites\GP\Libs\dataBase.php(22): PDO->__construct()
+#1 C:\Websites\GP\Models\loginModel.php(13): DataBase->connect()
+#2 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#3 C:\Websites\GP\Libs\app.php(52): Login->in()
+#4 C:\Websites\GP\index.php(8): App->__construct()
+#5 {main}
+[25-Jan-2024 19:51:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Websites\GP\Models\loginModel.php:14
+Stack trace:
+#0 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#1 C:\Websites\GP\Libs\app.php(52): Login->in()
+#2 C:\Websites\GP\index.php(8): App->__construct()
+#3 {main}
+  thrown in C:\Websites\GP\Models\loginModel.php on line 14
+[25-Jan-2024 19:52:17 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 41
+[25-Jan-2024 19:52:30 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 41
+[25-Jan-2024 19:52:32 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 41
+[25-Jan-2024 19:52:38 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 41
+[25-Jan-2024 19:52:38 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 41
+[25-Jan-2024 19:52:42 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 41
+[25-Jan-2024 19:53:36 UTC] DataBase :: Connect = Error en conexion de base de datos PDOException: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+ in C:\Websites\GP\Libs\dataBase.php:22
+Stack trace:
+#0 C:\Websites\GP\Libs\dataBase.php(22): PDO->__construct()
+#1 C:\Websites\GP\Models\loginModel.php(13): DataBase->connect()
+#2 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#3 C:\Websites\GP\Libs\app.php(52): Login->in()
+#4 C:\Websites\GP\index.php(8): App->__construct()
+#5 {main}
+[25-Jan-2024 19:53:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Websites\GP\Models\loginModel.php:14
+Stack trace:
+#0 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#1 C:\Websites\GP\Libs\app.php(52): Login->in()
+#2 C:\Websites\GP\index.php(8): App->__construct()
+#3 {main}
+  thrown in C:\Websites\GP\Models\loginModel.php on line 14
+[25-Jan-2024 19:53:57 UTC] DataBase :: Connect = Error en conexion de base de datos PDOException: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+ in C:\Websites\GP\Libs\dataBase.php:22
+Stack trace:
+#0 C:\Websites\GP\Libs\dataBase.php(22): PDO->__construct()
+#1 C:\Websites\GP\Models\loginModel.php(13): DataBase->connect()
+#2 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#3 C:\Websites\GP\Libs\app.php(52): Login->in()
+#4 C:\Websites\GP\index.php(8): App->__construct()
+#5 {main}
+[25-Jan-2024 19:53:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Websites\GP\Models\loginModel.php:14
+Stack trace:
+#0 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#1 C:\Websites\GP\Libs\app.php(52): Login->in()
+#2 C:\Websites\GP\index.php(8): App->__construct()
+#3 {main}
+  thrown in C:\Websites\GP\Models\loginModel.php on line 14
+[25-Jan-2024 19:53:57 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 40
+[25-Jan-2024 19:53:57 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 40
+[25-Jan-2024 19:53:57 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 40
+[25-Jan-2024 19:53:57 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 40
+[25-Jan-2024 19:53:57 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting ';' or ',' in C:\Websites\GP\Controllers\login.php on line 40
+[25-Jan-2024 19:58:09 UTC] DataBase :: Connect = Error en conexion de base de datos PDOException: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+ in C:\Websites\GP\Libs\dataBase.php:22
+Stack trace:
+#0 C:\Websites\GP\Libs\dataBase.php(22): PDO->__construct()
+#1 C:\Websites\GP\Models\loginModel.php(13): DataBase->connect()
+#2 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#3 C:\Websites\GP\Libs\app.php(52): Login->in()
+#4 C:\Websites\GP\index.php(8): App->__construct()
+#5 {main}
+[25-Jan-2024 19:58:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Websites\GP\Models\loginModel.php:14
+Stack trace:
+#0 C:\Websites\GP\Controllers\login.php(37): LoginModel->login()
+#1 C:\Websites\GP\Libs\app.php(52): Login->in()
+#2 C:\Websites\GP\index.php(8): App->__construct()
+#3 {main}
+  thrown in C:\Websites\GP\Models\loginModel.php on line 14
+[25-Jan-2024 20:01:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Session::setCurrentid() in C:\Websites\GP\Controllers\login.php:40
+Stack trace:
+#0 C:\Websites\GP\Libs\app.php(52): Login->in()
+#1 C:\Websites\GP\index.php(8): App->__construct()
+#2 {main}
+  thrown in C:\Websites\GP\Controllers\login.php on line 40
+[25-Jan-2024 20:01:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Session::setCurrentId() in C:\Websites\GP\Controllers\login.php:40
+Stack trace:
+#0 C:\Websites\GP\Libs\app.php(52): Login->in()
+#1 C:\Websites\GP\index.php(8): App->__construct()
+#2 {main}
+  thrown in C:\Websites\GP\Controllers\login.php on line 40
+[25-Jan-2024 20:03:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Session::setCurrentId() in C:\Websites\GP\Controllers\login.php:40
+Stack trace:
+#0 C:\Websites\GP\Libs\app.php(52): Login->in()
+#1 C:\Websites\GP\index.php(8): App->__construct()
+#2 {main}
+  thrown in C:\Websites\GP\Controllers\login.php on line 40

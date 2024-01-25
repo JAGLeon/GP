@@ -1,0 +1,6 @@
+[24-Jan-2024 14:42:53 UTC] PHP Fatal error:  Uncaught Error: Class 'Session' not found in C:\Websites\GP\Controllers\security.php:3
+Stack trace:
+#0 C:\Websites\GP\Libs\app.php(6): require_once()
+#1 C:\Websites\GP\index.php(4): require_once('C:\\Websites\\GP\\...')
+#2 {main}
+  thrown in C:\Websites\GP\Controllers\security.php on line 3

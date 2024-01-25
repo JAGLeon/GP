@@ -1,10 +1,14 @@
 <?php
-require_once('config/config.php');
-require_once('libs/controller.php');
-require_once('controllers/errors.php');
-require_once('controllers/logs.php');
-require_once('libs/view.php');
+require_once('Config/config.php');
+require_once('Libs/controller.php');
+require_once('Controllers/errors.php');
+require_once('Controllers/logs.php');
+require_once('Libs/view.php');
+require_once('Libs/dataBase.php');
+require_once('Libs/model.php');
 require_once('Entities/context.php');
+require_once('Controllers/security.php');
+
 
 class App{
     function __construct()

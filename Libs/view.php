@@ -9,7 +9,6 @@ class View{
         require_once 'Views/header.php';
         require 'views/' . $this->controlador . '/' . $nombre . '.php';
         require_once 'Views/footer.php';
-
     }
 }
 
